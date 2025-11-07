@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 - Leareng</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>관리자 페이지</h1>
+            <div class="user-info">
+                <span id="userEmail"></span>
+                <button id="logoutBtn" class="btn-secondary">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <h2>구독 신청 관리</h2>
+            <div id="pendingRequests"></div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!authManager.isAuthenticated() || !authManager.isAdmin) {
+                alert('관리자 권한이 필요합니다.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            document.getElementById('userEmail').textContent = authManager.userEmail;
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                authManager.logout();
+            });
+
+            await loadPendingRequests();
+        });
+
+        async function loadPendingRequests() {
+            try {
+                const requests = await api.get('/subscription/pending');
+                const container = document.getElementById('pendingRequests');
+
+                if (requests.length === 0) {
+                    container.innerHTML = '<p class="message info">대기 중인 구독 요청이 없습니다.</p>';
+                    return;
+                }
+
+                container.innerHTML = requests.map(request => `
+                    <div class="passage-card">
+                        <h4>신청자: ${request.email}</h4>
+                        <p>신청일: ${new Date(request.requestedAt).toLocaleString()}</p>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="btn-primary" onclick="approveRequest(${request.id})">승인</button>
+                            <button class="btn-secondary" onclick="denyRequest(${request.id})">거절</button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                document.getElementById('pendingRequests').innerHTML = 
+                    `<div class="message error">오류: ${error.message}</div>`;
+            }
+        }
+
+        async function approveRequest(requestId) {
+            if (!confirm('이 구독 요청을 승인하시겠습니까?')) {
+                return;
+            }
+
+            try {
+                await api.post(`/subscription/approve/${requestId}`, {});
+                alert('구독 요청이 승인되었습니다.');
+                await loadPendingRequests();
+            } catch (error) {
+                alert('오류: ' + error.message);
+            }
+        }
+
+        async function denyRequest(requestId) {
+            if (!confirm('이 구독 요청을 거절하시겠습니까?')) {
+                return;
+            }
+
+            try {
+                await api.post(`/subscription/deny/${requestId}`, {});
+                alert('구독 요청이 거절되었습니다.');
+                await loadPendingRequests();
+            } catch (error) {
+                alert('오류: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
+

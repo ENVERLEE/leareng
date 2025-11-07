@@ -1,0 +1,15 @@
+[server]
+enableXsrfProtection=false
+enableCORS=false
+
+[client]
+toolbarMode = "viewer"
+[theme]
+base = "light"
+
+# iOS 스타일 색상
+primaryColor = "#007AFF"  # iOS 블루
+backgroundColor = "#F2F2F7"  # iOS 라이트 그레이
+secondaryBackgroundColor = "#FFFFFF"  # 흰색
+textColor = "#1D1D1F"  # iOS 다크 그레이
+font = "sans serif"  # iOS 기본 폰트 스타일
