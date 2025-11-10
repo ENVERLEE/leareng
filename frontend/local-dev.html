@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 개발 가이드</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>로컬 프론트엔드 개발 가이드</h1>
+    
+    <h2>1. 간단한 HTTP 서버 실행</h2>
+    
+    <h3>Python 사용 (가장 쉬움)</h3>
+    <pre><code>cd frontend
+python3 -m http.server 3000</code></pre>
+    <p>브라우저에서 <code>http://localhost:3000</code> 접속</p>
+    
+    <h3>Node.js 사용</h3>
+    <pre><code>cd frontend
+npx http-server -p 3000</code></pre>
+    
+    <h3>VS Code Live Server 확장 사용</h3>
+    <p>VS Code에서 "Live Server" 확장 설치 후 우클릭 → "Open with Live Server"</p>
+    
+    <h2>2. Railway 백엔드 URL 설정</h2>
+    
+    <div class="warning">
+        <strong>중요:</strong> 로컬에서 프론트엔드를 실행할 때는 Railway 백엔드 URL을 사용해야 합니다.
+    </div>
+    
+    <p><code>index.html</code> 파일의 <code>&lt;head&gt;</code> 섹션에 다음을 추가하세요:</p>
+    
+    <pre><code>&lt;script&gt;
+    // Railway 백엔드 URL 설정
+    window.BACKEND_URL = 'https://your-backend.railway.app';
+&lt;/script&gt;</code></pre>
+    
+    <h2>3. CORS 문제 해결</h2>
+    
+    <p>Railway 백엔드의 환경 변수에 다음을 추가하세요:</p>
+    
+    <pre><code>CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8080,http://127.0.0.1:3000</code></pre>
+    
+    <h2>4. 빠른 테스트</h2>
+    
+    <p>브라우저 콘솔(F12)에서 다음을 실행하여 연결 확인:</p>
+    
+    <pre><code>fetch('https://your-backend.railway.app/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'test@test.com', password: 'test' })
+})
+.then(r => r.json())
+.then(console.log)
+.catch(console.error);</code></pre>
+    
+    <h2>5. 개발 팁</h2>
+    
+    <ul>
+        <li>브라우저 개발자 도구(F12) → Console에서 API URL 확인</li>
+        <li>Network 탭에서 API 요청 상태 확인</li>
+        <li>에러 발생 시 상세 로그 확인</li>
+    </ul>
+</body>
+</html>
+

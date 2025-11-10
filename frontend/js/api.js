@@ -26,6 +26,9 @@ const getApiBaseUrl = () => {
 
 const API_BASE_URL = getApiBaseUrl();
 
+// 디버깅용: API Base URL 확인
+console.log('API Base URL:', API_BASE_URL);
+
 class ApiClient {
     constructor() {
         this.baseUrl = API_BASE_URL;
@@ -65,16 +68,60 @@ class ApiClient {
                 throw new Error('인증이 만료되었습니다. 다시 로그인해주세요.');
             }
 
-            const data = await response.json();
+            // JSON 파싱 시도
+            let data;
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                try {
+                    data = await response.json();
+                } catch (jsonError) {
+                    console.error('JSON 파싱 오류:', jsonError);
+                    const text = await response.text();
+                    console.error('응답 본문:', text);
+                    throw new Error(`서버 응답을 파싱할 수 없습니다. (${response.status})`);
+                }
+            } else {
+                // JSON이 아닌 경우 텍스트로 읽기
+                const text = await response.text();
+                console.error('예상하지 못한 응답 형식:', text);
+                throw new Error(`서버가 예상하지 못한 형식으로 응답했습니다. (${response.status})`);
+            }
             
             if (!response.ok) {
-                throw new Error(data.error || data.message || `요청 실패 (${response.status})`);
+                const errorMessage = data?.error || data?.message || `요청 실패 (${response.status})`;
+                console.error('API 오류 응답:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    url: url,
+                    data: data
+                });
+                throw new Error(errorMessage);
             }
             
             return data;
         } catch (error) {
-            console.error('API Error:', error);
-            throw error;
+            // 네트워크 오류 처리
+            if (error instanceof TypeError && error.message.includes('fetch')) {
+                console.error('네트워크 오류:', {
+                    url: url,
+                    error: error.message
+                });
+                throw new Error('서버에 연결할 수 없습니다. 네트워크 연결을 확인해주세요.');
+            }
+            
+            // 이미 Error 객체인 경우 그대로 전달
+            if (error instanceof Error) {
+                console.error('API 오류:', {
+                    message: error.message,
+                    url: url,
+                    stack: error.stack
+                });
+                throw error;
+            }
+            
+            // 기타 오류
+            console.error('알 수 없는 오류:', error);
+            throw new Error('알 수 없는 오류가 발생했습니다.');
         }
     }
 
@@ -114,16 +161,60 @@ class ApiClient {
                 throw new Error('인증이 만료되었습니다. 다시 로그인해주세요.');
             }
 
-            const data = await response.json();
+            // JSON 파싱 시도
+            let data;
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                try {
+                    data = await response.json();
+                } catch (jsonError) {
+                    console.error('JSON 파싱 오류:', jsonError);
+                    const text = await response.text();
+                    console.error('응답 본문:', text);
+                    throw new Error(`서버 응답을 파싱할 수 없습니다. (${response.status})`);
+                }
+            } else {
+                // JSON이 아닌 경우 텍스트로 읽기
+                const text = await response.text();
+                console.error('예상하지 못한 응답 형식:', text);
+                throw new Error(`서버가 예상하지 못한 형식으로 응답했습니다. (${response.status})`);
+            }
             
             if (!response.ok) {
-                throw new Error(data.error || data.message || `요청 실패 (${response.status})`);
+                const errorMessage = data?.error || data?.message || `요청 실패 (${response.status})`;
+                console.error('API 오류 응답:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    url: url,
+                    data: data
+                });
+                throw new Error(errorMessage);
             }
             
             return data;
         } catch (error) {
-            console.error('API Error:', error);
-            throw error;
+            // 네트워크 오류 처리
+            if (error instanceof TypeError && error.message.includes('fetch')) {
+                console.error('네트워크 오류:', {
+                    url: url,
+                    error: error.message
+                });
+                throw new Error('서버에 연결할 수 없습니다. 네트워크 연결을 확인해주세요.');
+            }
+            
+            // 이미 Error 객체인 경우 그대로 전달
+            if (error instanceof Error) {
+                console.error('API 오류:', {
+                    message: error.message,
+                    url: url,
+                    stack: error.stack
+                });
+                throw error;
+            }
+            
+            // 기타 오류
+            console.error('알 수 없는 오류:', error);
+            throw new Error('알 수 없는 오류가 발생했습니다.');
         }
     }
 }

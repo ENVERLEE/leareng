@@ -9,8 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script>
-        // Railway 백엔드 URL 설정
-        window.BACKEND_URL = 'leareng-backend-production.up.railway.app';
+        // Railway 백엔드 URL 설정 (프로토콜 포함)
+        // 배포 시 실제 백엔드 도메인으로 변경하세요
+        window.BACKEND_URL = 'https://leareng-backend-production.up.railway.app';
+        
+        // 디버깅용: API URL 확인
+        console.log('Backend URL:', window.BACKEND_URL);
     </script>
     <script>
         tailwind.config = {
@@ -55,7 +59,7 @@
         <div class="nav-container">
             <div class="nav-brand">
                 <div class="brand-icon">
-                    <i class="fa-solid fa-sparkles"></i>
+                    <img src="assets/logo.png" alt="Leareng Logo" class="logo-image">
                 </div>
                 <div class="brand-meta">
                     <h1>Leareng</h1>
@@ -114,7 +118,7 @@
                         </div>
                         <div>
                             <div class="stat-value" id="totalPassages">0</div>
-                            <div class="stat-label">저장된 지문</div>
+                            <div class="stat-label">지문</div>
                         </div>
                     </div>
                     <div class="stat-item glass-tile">
@@ -123,7 +127,7 @@
                         </div>
                         <div>
                             <div class="stat-value" id="totalQuestions">0</div>
-                            <div class="stat-label">생성된 문제</div>
+                            <div class="stat-label">문제</div>
                         </div>
                     </div>
                 </div>
