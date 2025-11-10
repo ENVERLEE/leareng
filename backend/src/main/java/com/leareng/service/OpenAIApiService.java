@@ -64,14 +64,41 @@ public class OpenAIApiService {
                 .uri("/chat/completions")
                 .bodyValue(requestBody)
                 .retrieve()
+                .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), response -> {
+                    return response.bodyToMono(String.class)
+                            .flatMap(errorBody -> {
+                                try {
+                                    JsonNode errorNode = objectMapper.readTree(errorBody);
+                                    String errorMessage = errorNode.path("error").path("message").asText();
+                                    if (errorMessage.isEmpty()) {
+                                        errorMessage = errorNode.path("error").asText();
+                                    }
+                                    if (errorMessage.isEmpty()) {
+                                        errorMessage = errorBody;
+                                    }
+                                    return Mono.error(new RuntimeException("OpenAI API Error (" + response.statusCode() + "): " + errorMessage));
+                                } catch (Exception e) {
+                                    return Mono.error(new RuntimeException("OpenAI API Error (" + response.statusCode() + "): " + errorBody));
+                                }
+                            });
+                })
                 .bodyToMono(JsonNode.class)
                 .map(response -> {
                     JsonNode choices = response.path("choices");
                     if (choices.isArray() && choices.size() > 0) {
                         JsonNode message = choices.get(0).path("message");
-                        return message.path("content").asText();
+                        JsonNode content = message.path("content");
+                        if (content.isMissingNode() || content.asText().isEmpty()) {
+                            throw new RuntimeException("OpenAI API returned empty content");
+                        }
+                        return content.asText();
                     }
-                    throw new RuntimeException("Invalid response from OpenAI API");
+                    throw new RuntimeException("Invalid response from OpenAI API: no choices found");
+                })
+                .doOnError(error -> {
+                    System.err.println("OpenAI API request failed:");
+                    System.err.println("Request body: " + requestBody);
+                    System.err.println("Error: " + error.getMessage());
                 });
     }
 }
