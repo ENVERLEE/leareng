@@ -919,29 +919,53 @@ button {
    -------------------------------------------- */
 .loading-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(240, 244, 248, 0.80);
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
     z-index: 80;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px -20px rgba(26, 31, 46, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    min-width: 280px;
+    max-width: 400px;
+    pointer-events: auto;
+    animation: slideInRight 0.3s ease-out;
+    transform: translateX(0);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .loading-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
+    width: 100%;
 }
 
 .loading-spinner {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: conic-gradient(from 90deg, rgba(74, 101, 129, 0.30), rgba(74, 101, 129, 0.75));
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 6px), #000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 4px), #000 0);
     animation: spin 1s linear infinite;
+    flex-shrink: 0;
 }
 
 @keyframes spin {
@@ -951,9 +975,10 @@ button {
 }
 
 .loading-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    flex: 1;
 }
 
 .modal-overlay {
@@ -1412,6 +1437,14 @@ button {
 
     .auth-tabs {
         grid-template-columns: 1fr;
+    }
+    
+    .loading-overlay {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
     }
 
     .app-container {

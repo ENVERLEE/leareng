@@ -142,7 +142,7 @@ async function loadSavedPassages() {
                 </div>
                 <div class="card-actions">
                     <button class="btn-secondary" onclick="startStudy(${passage.id})">학습하기</button>
-                    <button class="btn-primary" onclick="generateQuestionsForPassage(${passage.id})">문제 생성</button>
+                    <button class="btn-primary" id="generateBtn-${passage.id}" onclick="generateQuestionsForPassage(${passage.id})">문제 생성</button>
                 </div>
             </div>
         `).join('');
@@ -202,8 +202,28 @@ function startStudy(passageId) {
     }
 }
 
+// 문제 생성 중 상태 관리
+let isGeneratingQuestions = false;
+
 async function generateQuestionsForPassage(passageId) {
+    // 이미 생성 중이면 중복 요청 방지
+    if (isGeneratingQuestions) {
+        alert('문제 생성이 이미 진행 중입니다. 잠시만 기다려주세요.');
+        return;
+    }
+    
+    // 버튼 비활성화
+    const generateBtn = document.getElementById(`generateBtn-${passageId}`);
+    if (generateBtn) {
+        generateBtn.disabled = true;
+        generateBtn.textContent = '생성 중...';
+        generateBtn.style.opacity = '0.6';
+        generateBtn.style.cursor = 'not-allowed';
+    }
+    
+    isGeneratingQuestions = true;
     showLoading('문제를 생성하고 있습니다...');
+    
     try {
         const passages = await api.get('/passages');
         const passage = passages.find(p => p.id === passageId);
@@ -225,6 +245,15 @@ async function generateQuestionsForPassage(passageId) {
     } catch (error) {
         hideLoading();
         alert('오류: ' + error.message);
+    } finally {
+        isGeneratingQuestions = false;
+        // 버튼 다시 활성화
+        if (generateBtn) {
+            generateBtn.disabled = false;
+            generateBtn.textContent = '문제 생성';
+            generateBtn.style.opacity = '1';
+            generateBtn.style.cursor = 'pointer';
+        }
     }
 }
 

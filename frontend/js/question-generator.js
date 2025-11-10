@@ -27,7 +27,7 @@ if (document.getElementById('pdfUpload')) {
                         </div>
                         <div class="action-buttons">
                             <button class="btn-secondary" onclick="savePdfPassage(${idx}, \`${passage.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">저장</button>
-                            <button class="btn-primary" onclick="generateFromPdf(${idx}, \`${passage.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">문제 생성</button>
+                            <button class="btn-primary" id="pdfGenerateBtn-${idx}" onclick="generateFromPdf(${idx}, \`${passage.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">문제 생성</button>
                         </div>
                     </div>
                 `).join('');
@@ -65,14 +65,36 @@ async function savePdfPassage(idx, passageText) {
     }
 }
 
+// 문제 생성 중 상태 관리 (question-generator.js)
+if (typeof window.isGeneratingQuestions === 'undefined') {
+    window.isGeneratingQuestions = false;
+}
+
 async function generateFromPdf(idx, passageText) {
+    // 이미 생성 중이면 중복 요청 방지
+    if (window.isGeneratingQuestions) {
+        alert('문제 생성이 이미 진행 중입니다. 잠시만 기다려주세요.');
+        return;
+    }
+    
     const title = document.getElementById(`pdfTitle${idx}`).value;
     if (!title) {
         alert('제목을 입력해주세요.');
         return;
     }
 
+    // 버튼 비활성화
+    const generateBtn = document.getElementById(`pdfGenerateBtn-${idx}`);
+    if (generateBtn) {
+        generateBtn.disabled = true;
+        generateBtn.textContent = '생성 중...';
+        generateBtn.style.opacity = '0.6';
+        generateBtn.style.cursor = 'not-allowed';
+    }
+
+    window.isGeneratingQuestions = true;
     showLoading('문제를 생성하고 있습니다...');
+    
     try {
         await api.post('/questions/generate', { text: passageText, title });
         hideLoading();
@@ -86,6 +108,15 @@ async function generateFromPdf(idx, passageText) {
     } catch (error) {
         hideLoading();
         alert('오류: ' + error.message);
+    } finally {
+        window.isGeneratingQuestions = false;
+        // 버튼 다시 활성화
+        if (generateBtn) {
+            generateBtn.disabled = false;
+            generateBtn.textContent = '문제 생성';
+            generateBtn.style.opacity = '1';
+            generateBtn.style.cursor = 'pointer';
+        }
     }
 }
 
@@ -127,6 +158,12 @@ if (document.getElementById('savePassageBtn')) {
 
 if (document.getElementById('generateQuestionsBtn')) {
     document.getElementById('generateQuestionsBtn').addEventListener('click', async () => {
+        // 이미 생성 중이면 중복 요청 방지
+        if (window.isGeneratingQuestions) {
+            alert('문제 생성이 이미 진행 중입니다. 잠시만 기다려주세요.');
+            return;
+        }
+        
         const text = document.getElementById('manualPassage').value;
         const title = document.getElementById('manualTitle').value;
 
@@ -140,7 +177,19 @@ if (document.getElementById('generateQuestionsBtn')) {
             return;
         }
 
+        // 버튼 비활성화
+        const generateBtn = document.getElementById('generateQuestionsBtn');
+        if (generateBtn) {
+            generateBtn.disabled = true;
+            const originalText = generateBtn.innerHTML;
+            generateBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>생성 중...</span>';
+            generateBtn.style.opacity = '0.6';
+            generateBtn.style.cursor = 'not-allowed';
+        }
+
+        window.isGeneratingQuestions = true;
         showLoading('문제를 생성하고 있습니다...');
+        
         try {
             await api.post('/questions/generate', { text, title });
             hideLoading();
@@ -154,6 +203,15 @@ if (document.getElementById('generateQuestionsBtn')) {
         } catch (error) {
             hideLoading();
             alert('오류: ' + error.message);
+        } finally {
+            window.isGeneratingQuestions = false;
+            // 버튼 다시 활성화
+            if (generateBtn) {
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="fa-solid fa-wand-sparkles"></i> <span>문제 생성</span>';
+                generateBtn.style.opacity = '1';
+                generateBtn.style.cursor = 'pointer';
+            }
         }
     });
 }
