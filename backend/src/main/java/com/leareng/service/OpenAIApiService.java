@@ -43,7 +43,7 @@ public class OpenAIApiService {
     public Mono<String> generateText(String systemMessage, String userMessage) {
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", "gpt-5-nano");
-        requestBody.put("max_tokens", 2000);
+        requestBody.put("max_completion_tokens", 2000);
         requestBody.put("temperature", 0.6);
         
         List<Map<String, String>> messages = new ArrayList<>();
