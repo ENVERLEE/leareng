@@ -25,10 +25,10 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "NUMBER(1) DEFAULT 0")
     private Boolean isVerified = false;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "NUMBER(1) DEFAULT 0")
     private Boolean isAdmin = false;
 
     @Column(nullable = false)

@@ -4,22 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leareng - 영어 내신 학습 플랫폼</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#EEF2FF',
+                            100: '#E0E7FF',
+                            200: '#C7D2FE',
+                            500: '#6366F1',
+                            600: '#4F46E5',
+                            700: '#4338CA'
+                        },
+                        night: '#0F172A',
+                        nebula: '#1E293B'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        glow: '0 35px 60px -25px rgba(99, 102, 241, 0.7)',
+                        soft: '0 30px 80px -40px rgba(15, 23, 42, 0.65)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="font-inter text-slate-800 min-h-screen relative overflow-hidden">
+    <div class="perplexity-backdrop" aria-hidden="true">
+        <div class="perplexity-orb orb-primary animate__animated animate__fadeInUp"></div>
+        <div class="perplexity-orb orb-secondary animate__animated animate__fadeInUp animate__delay-1s"></div>
+        <div class="perplexity-grid"></div>
+    </div>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar glass-panel animate__animated animate__fadeInDown">
         <div class="nav-container">
             <div class="nav-brand">
-                <h1>Leareng</h1>
-                <span class="nav-subtitle">영어 내신 학습 플랫폼</span>
+                <div class="brand-icon">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <div class="brand-meta">
+                    <h1>Leareng</h1>
+                    <span class="nav-subtitle">영어 내신 학습 플랫폼</span>
+                </div>
             </div>
             <div class="nav-actions" id="userInfo" style="display: none;">
                 <div class="user-profile">
                     <span class="user-email" id="userEmail"></span>
-                    <a href="admin.html" class="admin-link" id="adminLink" style="display: none;">관리자</a>
+                    <a href="admin.html" class="admin-link" id="adminLink" style="display: none;">
+                        <i class="fa-solid fa-shield-check"></i>
+                        <span>관리자</span>
+                    </a>
                 </div>
-                <button id="logoutBtn" class="btn-icon">로그아웃</button>
+                <button id="logoutBtn" class="btn-icon btn-glow">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>로그아웃</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -27,56 +77,99 @@
     <!-- Main Container -->
     <div class="app-wrapper">
         <!-- Sidebar -->
-        <aside class="app-sidebar">
+        <aside class="app-sidebar animate__animated animate__fadeInLeft animate__delay-1s">
             <!-- Subscription Card -->
-            <div class="sidebar-card subscription-card">
+            <div class="sidebar-card subscription-card glass-card">
                 <div class="card-header">
+                    <span class="card-badge">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>Premium</span>
+                    </span>
                     <h3>프리미엄 구독</h3>
                 </div>
                 <div id="subscriptionStatus" class="subscription-status"></div>
-                <button id="subscribeBtn" class="btn-subscribe">구독 신청</button>
+                <button id="subscribeBtn" class="btn-subscribe">
+                    <i class="fa-solid fa-rocket-launch"></i>
+                    <span>구독 신청</span>
+                </button>
             </div>
 
             <!-- Quick Stats -->
-            <div class="sidebar-card stats-card">
+            <div class="sidebar-card stats-card glass-card">
                 <div class="card-header">
+                    <span class="card-badge neutral">
+                        <i class="fa-solid fa-signal"></i>
+                        <span>Status</span>
+                    </span>
                     <h3>학습 통계</h3>
                 </div>
                 <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalPassages">0</div>
-                        <div class="stat-label">저장된 지문</div>
+                    <div class="stat-item glass-tile">
+                        <div class="stat-icon">
+                            <i class="fa-regular fa-note-sticky"></i>
+                        </div>
+                        <div>
+                            <div class="stat-value" id="totalPassages">0</div>
+                            <div class="stat-label">저장된 지문</div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalQuestions">0</div>
-                        <div class="stat-label">생성된 문제</div>
+                    <div class="stat-item glass-tile">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <div>
+                            <div class="stat-value" id="totalQuestions">0</div>
+                            <div class="stat-label">생성된 문제</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="app-main">
+        <main class="app-main animate__animated animate__fadeInUp">
+            <section class="hero-panel glass-card">
+                <div class="hero-content">
+                    <span class="hero-chip">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>새로운 대시보드</span>
+                    </span>
+                    <h2>
+                        집중이 쉬워지는<br>
+                        <span class="gradient-text">Leareng 학습 콘솔</span>
+                    </h2>
+                    <p>시선을 방해하는 요소를 덜어내고 핵심 흐름만 남겼습니다. 학습, 생성, 라이브러리를 자연스럽게 오가며 필요한 작업에 몰입해 보세요.</p>
+                </div>
+                <div class="hero-cta">
+                    <div class="cta-card glass-tile">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>카드 기반 탐색으로 원하는 지문과 문제를 빠르게 정리할 수 있습니다.</span>
+                    </div>
+                    <div class="cta-actions">
+                        <button type="button" class="btn-primary btn-glow" onclick="switchMode('create')">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <span>지문 만들기</span>
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="switchMode('library')">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>라이브러리 탐색</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
             <!-- Mode Selector -->
-            <div class="mode-selector">
+            <div class="mode-selector glass-card">
                 <button class="mode-btn active" data-mode="study">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
+                    <i class="fa-regular fa-circle-play"></i>
                     <span>학습 모드</span>
                 </button>
                 <button class="mode-btn" data-mode="create">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M5 12h14"></path>
-                    </svg>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <span>지문 생성</span>
                 </button>
                 <button class="mode-btn" data-mode="library">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
+                    <i class="fa-solid fa-layer-group"></i>
                     <span>지문 라이브러리</span>
                 </button>
             </div>
@@ -87,13 +180,12 @@
                     <h2>학습 모드</h2>
                     <p>저장된 지문으로 문제를 풀어보세요</p>
                 </div>
-                <div class="study-container">
+                <div class="study-container glass-card">
                     <div id="studyContent" class="study-content">
-                        <div class="empty-state">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                            </svg>
+                        <div class="empty-state animate__animated animate__fadeIn">
+                            <div class="empty-icon glass-tile">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
                             <h3>학습할 지문을 선택하세요</h3>
                             <p>지문 라이브러리에서 지문을 선택하여 학습을 시작하세요</p>
                         </div>
@@ -108,14 +200,20 @@
                     <p>새로운 지문을 추가하거나 PDF에서 추출하세요</p>
                 </div>
                 
-                <div class="create-tabs">
-                    <button class="create-tab active" data-tab="manual">직접 입력</button>
-                    <button class="create-tab" data-tab="pdf">PDF 업로드</button>
+                <div class="create-tabs glass-card">
+                    <button class="create-tab active" data-tab="manual">
+                        <i class="fa-solid fa-keyboard"></i>
+                        <span>직접 입력</span>
+                    </button>
+                    <button class="create-tab" data-tab="pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>PDF 업로드</span>
+                    </button>
                 </div>
 
-                <!-- Manual Input -->
+                    <!-- Manual Input -->
                 <div id="manualTab" class="create-content active">
-                    <div class="input-card">
+                    <div class="input-card glass-card">
                         <div class="input-group">
                             <label for="manualTitle">지문 제목</label>
                             <input type="text" id="manualTitle" placeholder="예: 환경 보호에 관한 지문">
@@ -125,25 +223,30 @@
                             <textarea id="manualPassage" rows="12" placeholder="영어 지문을 입력하세요..."></textarea>
                         </div>
                         <div class="action-buttons">
-                            <button id="savePassageBtn" class="btn-secondary">지문 저장</button>
-                            <button id="generateQuestionsBtn" class="btn-primary">문제 생성</button>
+                            <button id="savePassageBtn" class="btn-secondary">
+                                <i class="fa-solid fa-bookmark"></i>
+                                <span>지문 저장</span>
+                            </button>
+                            <button id="generateQuestionsBtn" class="btn-primary btn-glow">
+                                <i class="fa-solid fa-wand-sparkles"></i>
+                                <span>문제 생성</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- PDF Upload -->
                 <div id="pdfTab" class="create-content">
-                    <div class="upload-card">
-                        <div class="upload-area">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                <polyline points="17 8 12 3 7 8"></polyline>
-                                <line x1="12" y1="3" x2="12" y2="15"></line>
-                            </svg>
+                    <div class="upload-card glass-card">
+                        <div class="upload-area glass-tile">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
                             <h3>PDF 파일 업로드</h3>
                             <p>PDF 파일을 선택하면 자동으로 지문을 추출합니다</p>
                             <input type="file" id="pdfUpload" accept=".pdf" class="file-input">
-                            <label for="pdfUpload" class="btn-primary">파일 선택</label>
+                            <label for="pdfUpload" class="btn-primary btn-glow">
+                                <i class="fa-solid fa-file-arrow-up"></i>
+                                <span>파일 선택</span>
+                            </label>
                         </div>
                         <div id="pdfPassages" class="pdf-results"></div>
                     </div>
@@ -156,13 +259,12 @@
                     <h2>지문 라이브러리</h2>
                     <p>저장된 모든 지문을 확인하고 학습하세요</p>
                 </div>
-                <div class="library-container">
+                <div class="library-container glass-card">
                     <div id="savedPassages" class="passages-grid">
-                        <div class="empty-state">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                            </svg>
+                        <div class="empty-state animate__animated animate__fadeIn">
+                            <div class="empty-icon glass-tile">
+                                <i class="fa-solid fa-folder-open"></i>
+                            </div>
                             <h3>저장된 지문이 없습니다</h3>
                             <p>지문 생성 모드에서 새로운 지문을 추가해보세요</p>
                         </div>
@@ -174,7 +276,7 @@
 
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay" style="display: none;">
-        <div class="loading-content">
+        <div class="loading-content glass-card">
             <div class="loading-spinner"></div>
             <div class="loading-text">처리 중...</div>
         </div>
@@ -182,47 +284,61 @@
 
     <!-- Subscription Modal -->
     <div id="subscriptionModal" class="modal-overlay" style="display: none;">
-        <div class="modal">
+        <div class="modal glass-card">
             <div class="modal-header">
-                <h2>프리미엄 구독 신청</h2>
-                <button class="modal-close" id="closeModalBtn">&times;</button>
+                <div class="modal-meta">
+                    <span class="modal-chip">
+                        <i class="fa-solid fa-star"></i>
+                        <span>PERK</span>
+                    </span>
+                    <h2>프리미엄 구독 신청</h2>
+                </div>
+                <button class="modal-close" id="closeModalBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
             <div class="modal-body">
-                <div class="subscription-info">
+                <div class="subscription-info glass-tile">
                     <h3>프리미엄 평생 구독 안내</h3>
                     <div class="price">19,900원</div>
                     <p>프리미엄 구독으로 모든 기능을 무제한으로 이용하세요</p>
                 </div>
 
-                <div class="account-info">
+                <div class="account-info glass-tile">
                     <h4>입금 계좌 정보</h4>
                     <p><strong>은행:</strong> 농협</p>
                     <p><strong>계좌번호:</strong> <span class="account-number">3521153275163</span></p>
                     <p><strong>예금주:</strong> 이준우</p>
                 </div>
 
-                <div class="benefits-section">
+                <div class="benefits-section glass-tile">
                     <h4>구독 혜택</h4>
                     <ul class="benefits-list">
-                        <li>무제한 문제 생성</li>
-                        <li>모든 기능 이용 가능</li>
-                        <li>광고 제거</li>
-                        <li>프리미엄 지원</li>
+                        <li><i class="fa-solid fa-infinity"></i> 무제한 문제 생성</li>
+                        <li><i class="fa-solid fa-unlock-keyhole"></i> 모든 기능 이용 가능</li>
+                        <li><i class="fa-solid fa-ban"></i> 광고 제거</li>
+                        <li><i class="fa-solid fa-headset"></i> 프리미엄 지원</li>
                     </ul>
                 </div>
 
-                <div class="subscription-steps">
+                <div class="subscription-steps glass-tile">
                     <p><strong>구독 방법:</strong></p>
                     <ol>
-                        <li>위 계좌로 구독료 입금</li>
-                        <li>아래 버튼을 클릭하여 구독 신청</li>
-                        <li>입금 확인 후 24시간 이내 승인</li>
+                        <li><span>1</span> 위 계좌로 구독료 입금</li>
+                        <li><span>2</span> 아래 버튼을 클릭하여 구독 신청</li>
+                        <li><span>3</span> 입금 확인 후 24시간 이내 승인</li>
                     </ol>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" id="cancelSubscriptionBtn">취소</button>
-                <button class="btn-primary" id="confirmSubscriptionBtn">입금 완료 - 구독 신청하기</button>
+                <button class="btn-secondary" id="cancelSubscriptionBtn">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span>취소</span>
+                </button>
+                <button class="btn-primary btn-glow" id="confirmSubscriptionBtn">
+                    <i class="fa-solid fa-check"></i>
+                    <span>입금 완료 - 구독 신청하기</span>
+                </button>
             </div>
         </div>
     </div>

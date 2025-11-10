@@ -20,7 +20,8 @@ public class Passage {
     @Column(nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Lob
+    @Column(nullable = false)
     private String text;
 
     @Column(nullable = false)

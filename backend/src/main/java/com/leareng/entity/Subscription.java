@@ -21,7 +21,7 @@ public class Subscription {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "NUMBER(1) DEFAULT 0")
     private Boolean isActive = false;
 
     private LocalDateTime expiryDate;

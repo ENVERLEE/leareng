@@ -125,8 +125,8 @@ if (document.getElementById('registerForm')) {
             registrationEmail = email;
             document.getElementById('registerForm').style.display = 'none';
             document.getElementById('verificationSection').style.display = 'block';
-            document.getElementById('verificationEmail').textContent = `이메일(${email})로 발송된 인증 코드를 입력해주세요.`;
-            messageEl.textContent = '인증 이메일이 발송되었습니다.';
+            document.getElementById('verificationEmail').textContent = `${email}로 인증 링크를 발송했습니다.`;
+            messageEl.textContent = '인증 이메일이 발송되었습니다. 이메일을 확인하여 링크를 클릭해주세요.';
             messageEl.className = 'message success';
         } catch (error) {
             messageEl.textContent = error.message;
@@ -134,30 +134,6 @@ if (document.getElementById('registerForm')) {
         }
     });
 
-    if (document.getElementById('verifyBtn')) {
-        document.getElementById('verifyBtn').addEventListener('click', async () => {
-            const code = document.getElementById('verificationCode').value;
-            const messageEl = document.getElementById('registerMessage');
-
-            if (!registrationEmail) {
-                messageEl.textContent = '회원가입을 먼저 진행해주세요.';
-                messageEl.className = 'message error';
-                return;
-            }
-
-            try {
-                await authManager.verifyEmail(registrationEmail, code);
-                messageEl.textContent = '이메일 인증이 완료되었습니다!';
-                messageEl.className = 'message success';
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
-            } catch (error) {
-                messageEl.textContent = error.message;
-                messageEl.className = 'message error';
-            }
-        });
-    }
 
     if (document.getElementById('resendBtn')) {
         document.getElementById('resendBtn').addEventListener('click', async () => {
@@ -171,9 +147,8 @@ if (document.getElementById('registerForm')) {
 
             try {
                 const email = registrationEmail;
-                const password = 'temp'; // 비밀번호는 서버에서 검증하지 않고 재발송만 함
                 await api.post('/auth/resend-verification', { email });
-                messageEl.textContent = '인증 코드가 재발송되었습니다.';
+                messageEl.textContent = '인증 링크가 재발송되었습니다. 이메일을 확인해주세요.';
                 messageEl.className = 'message success';
             } catch (error) {
                 messageEl.textContent = error.message;
@@ -192,45 +167,19 @@ if (document.getElementById('resetForm')) {
         const email = document.getElementById('resetEmailInput').value;
         const messageEl = document.getElementById('resetMessage');
 
-        try {
-            await authManager.requestPasswordReset(email);
-            resetEmail = email;
-            document.getElementById('resetForm').style.display = 'none';
-            document.getElementById('resetCodeSection').style.display = 'block';
-            document.getElementById('resetEmail').textContent = `이메일(${email})로 발송된 인증 코드를 입력해주세요.`;
-            messageEl.textContent = '비밀번호 재설정 이메일이 발송되었습니다.';
-            messageEl.className = 'message success';
-        } catch (error) {
-            messageEl.textContent = error.message;
-            messageEl.className = 'message error';
-        }
-    });
-
-    if (document.getElementById('resetPasswordBtn')) {
-        document.getElementById('resetPasswordBtn').addEventListener('click', async () => {
-            const code = document.getElementById('resetCode').value;
-            const newPassword = document.getElementById('newPassword').value;
-            const newPasswordConfirm = document.getElementById('newPasswordConfirm').value;
-            const messageEl = document.getElementById('resetMessage');
-
-            if (newPassword !== newPasswordConfirm) {
-                messageEl.textContent = '비밀번호가 일치하지 않습니다.';
-                messageEl.className = 'message error';
-                return;
-            }
-
             try {
-                await authManager.resetPassword(code, newPassword);
-                messageEl.textContent = '비밀번호가 성공적으로 변경되었습니다!';
+                await authManager.requestPasswordReset(email);
+                resetEmail = email;
+                document.getElementById('resetForm').style.display = 'none';
+                document.getElementById('resetCodeSection').style.display = 'block';
+                document.getElementById('resetEmail').textContent = `${email}로 비밀번호 재설정 링크를 발송했습니다.`;
+                messageEl.textContent = '비밀번호 재설정 이메일이 발송되었습니다. 이메일을 확인하여 링크를 클릭해주세요.';
                 messageEl.className = 'message success';
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
             } catch (error) {
                 messageEl.textContent = error.message;
                 messageEl.className = 'message error';
             }
-        });
-    }
+    });
+
 }
 

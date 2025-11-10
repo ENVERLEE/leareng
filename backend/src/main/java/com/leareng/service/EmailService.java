@@ -21,6 +21,9 @@ public class EmailService {
     @Value("${spring.mail.username}")
     private String fromEmail;
     
+    @Value("${app.frontend.url:http://localhost:80}")
+    private String frontendUrl;
+    
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
@@ -51,23 +54,39 @@ public class EmailService {
     
     public void sendVerificationEmail(String to, String token) {
         String subject = "Leareng 이메일 인증";
+        String verificationLink = frontendUrl + "/verify-email.html?token=" + token + "&email=" + to;
         String body = String.format("""
-            <h2>Leareng 이메일 인증</h2>
-            <p>아래 인증 코드를 입력하여 이메일을 인증해주세요:</p>
-            <h3 style="background-color: #f0f0f0; padding: 10px; font-family: monospace;">%s</h3>
-            <p>이 인증 코드는 24시간 동안 유효합니다.</p>
-            """, token);
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                <h2 style="color: #333; margin-bottom: 20px;">Leareng 이메일 인증</h2>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">안녕하세요,</p>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">이메일 인증을 완료하려면 아래 링크를 클릭해주세요:</p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="%s" style="display: inline-block; padding: 12px 30px; background-color: #6366F1; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600;">이메일 인증하기</a>
+                </div>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">위 버튼이 작동하지 않는 경우, 아래 링크를 복사하여 브라우저에 붙여넣으세요:</p>
+                <p style="color: #666; font-size: 12px; word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 4px;">%s</p>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">이 링크는 24시간 동안 유효합니다.</p>
+            </div>
+            """, verificationLink, verificationLink);
         sendEmail(to, subject, body);
     }
     
     public void sendPasswordResetEmail(String to, String token) {
         String subject = "Leareng 비밀번호 재설정";
+        String resetLink = frontendUrl + "/reset-password.html?token=" + token;
         String body = String.format("""
-            <h2>Leareng 비밀번호 재설정</h2>
-            <p>아래 인증 코드를 입력하여 비밀번호를 재설정하세요:</p>
-            <h3 style="background-color: #f0f0f0; padding: 10px; font-family: monospace;">%s</h3>
-            <p>이 인증 코드는 24시간 동안 유효합니다.</p>
-            """, token);
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                <h2 style="color: #333; margin-bottom: 20px;">Leareng 비밀번호 재설정</h2>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">안녕하세요,</p>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">비밀번호를 재설정하려면 아래 링크를 클릭해주세요:</p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="%s" style="display: inline-block; padding: 12px 30px; background-color: #6366F1; color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600;">비밀번호 재설정하기</a>
+                </div>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">위 버튼이 작동하지 않는 경우, 아래 링크를 복사하여 브라우저에 붙여넣으세요:</p>
+                <p style="color: #666; font-size: 12px; word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 4px;">%s</p>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">이 링크는 24시간 동안 유효합니다.</p>
+            </div>
+            """, resetLink, resetLink);
         sendEmail(to, subject, body);
     }
     

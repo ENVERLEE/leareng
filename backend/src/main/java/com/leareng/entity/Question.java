@@ -19,16 +19,19 @@ public class Question {
     @JoinColumn(name = "passage_id", nullable = false)
     private Passage passage;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Lob
+    @Column(nullable = false)
     private String question;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Lob
+    @Column(nullable = false)
     private String choices; // JSON string of choices array
 
     @Column(nullable = false)
     private Integer correctAnswer;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
+    @Column
     private String explanation;
 
     private Integer difficulty;
@@ -37,10 +40,12 @@ public class Question {
 
     private String typeId;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
+    @Column
     private String originalText;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
+    @Column
     private String koreanTranslation;
 
     private Integer questionNumber;
