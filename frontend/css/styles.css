@@ -1218,6 +1218,7 @@ button {
     text-align: center;
     position: relative;
     overflow: visible;
+    box-sizing: border-box;
 }
 
 .auth-logo {
@@ -1225,13 +1226,18 @@ button {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .logo-image-auth {
     width: 80px;
     height: 80px;
+    max-width: 100%;
     object-fit: contain;
     border-radius: 16px;
+    display: block;
 }
 
 .auth-container h1 {
@@ -1397,6 +1403,11 @@ button {
     .auth-container {
         margin: 4rem 1.25rem;
         padding: 2rem 1.75rem;
+    }
+    
+    .logo-image-auth {
+        width: 64px;
+        height: 64px;
     }
 
     .auth-tabs {

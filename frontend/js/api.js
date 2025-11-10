@@ -53,10 +53,18 @@ class ApiClient {
 
         const config = {
             ...options,
-            headers
+            headers,
+            method: options.method || 'GET'
         };
 
         try {
+            // 디버깅: 요청 정보 확인
+            console.log('API Request:', {
+                url: url,
+                method: config.method,
+                endpoint: endpoint
+            });
+            
             const response = await fetch(url, config);
             
             // Handle 401 Unauthorized
