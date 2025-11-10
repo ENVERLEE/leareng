@@ -3,7 +3,10 @@ package com.leareng.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leareng.dto.QuestionOutput;
+import com.leareng.entity.Passage;
+import com.leareng.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -18,6 +21,12 @@ public class QuestionGeneratorService {
     
     @Autowired
     private ObjectMapper objectMapper;
+    
+    @Autowired
+    private QuestionService questionService;
+    
+    @Autowired
+    private SubscriptionService subscriptionService;
     
     private static final Map<String, Map<String, String>> QUESTION_TYPES = new HashMap<>();
     
@@ -294,5 +303,30 @@ public class QuestionGeneratorService {
             throw new RuntimeException("Failed to generate translation: " + e.getMessage(), e);
         }
     }
-}
+    
+    @Async
+    public CompletableFuture<Void> generateQuestionsAsync(Long passageId, String passageText, String title, 
+                                                          Passage passage, User user) {
+        try {
+            // Generate translation
+            String koreanTranslation = generateTranslation(passageText);
+            
+            // Generate questions
+            List<QuestionOutput> questions = generateAllQuestions(passageText);
+            
+            // Save questions
+            questionService.saveQuestions(passage, questions, passageText, koreanTranslation);
+            
+            // Increment question count for free users
+            if (!subscriptionService.checkSubscriptionStatus(user)) {
+                subscriptionService.incrementQuestionCount(user);
+            }
+            
+            return CompletableFuture.completedFuture(null);
+        } catch (Exception e) {
+            System.err.println("Error generating questions asynchronously: " + e.getMessage());
+            e.printStackTrace();
+            return CompletableFuture.failedFuture(e);
+        }
+    }
 

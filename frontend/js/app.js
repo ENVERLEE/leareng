@@ -222,7 +222,7 @@ async function generateQuestionsForPassage(passageId) {
     }
     
     isGeneratingQuestions = true;
-    showLoading('문제를 생성하고 있습니다...');
+    showLoading('문제 생성을 시작했습니다. 백그라운드에서 생성 중입니다...');
     
     try {
         const passages = await api.get('/passages');
@@ -232,20 +232,35 @@ async function generateQuestionsForPassage(passageId) {
             throw new Error('지문을 찾을 수 없습니다.');
         }
 
-        await api.post('/questions/generate', {
+        const response = await api.post('/questions/generate', {
             passageId: passageId,
             text: passage.text,
             title: passage.title
         });
 
         hideLoading();
-        alert('문제 생성이 완료되었습니다!');
-        loadSavedPassages();
-        updateStats();
+        
+        // 즉시 응답을 받았으므로 백그라운드에서 생성 중임을 알림
+        if (response.status === 'processing') {
+            alert('문제 생성이 시작되었습니다. 잠시 후 자동으로 업데이트됩니다.');
+            
+            // 주기적으로 문제 생성 완료 여부 확인
+            checkQuestionGenerationStatus(passageId, generateBtn);
+        } else {
+            alert('문제 생성이 완료되었습니다!');
+            loadSavedPassages();
+            updateStats();
+            isGeneratingQuestions = false;
+            if (generateBtn) {
+                generateBtn.disabled = false;
+                generateBtn.textContent = '문제 생성';
+                generateBtn.style.opacity = '1';
+                generateBtn.style.cursor = 'pointer';
+            }
+        }
     } catch (error) {
         hideLoading();
         alert('오류: ' + error.message);
-    } finally {
         isGeneratingQuestions = false;
         // 버튼 다시 활성화
         if (generateBtn) {
@@ -255,6 +270,51 @@ async function generateQuestionsForPassage(passageId) {
             generateBtn.style.cursor = 'pointer';
         }
     }
+}
+
+// 문제 생성 상태 확인 함수
+async function checkQuestionGenerationStatus(passageId, generateBtn, attemptCount = 0) {
+    const maxAttempts = 60; // 최대 5분 (5초 * 60)
+    const checkInterval = 5000; // 5초마다 확인
+    
+    if (attemptCount >= maxAttempts) {
+        isGeneratingQuestions = false;
+        if (generateBtn) {
+            generateBtn.disabled = false;
+            generateBtn.textContent = '문제 생성';
+            generateBtn.style.opacity = '1';
+            generateBtn.style.cursor = 'pointer';
+        }
+        alert('문제 생성이 시간 초과되었습니다. 새로고침 후 확인해주세요.');
+        return;
+    }
+    
+    setTimeout(async () => {
+        try {
+            const questions = await api.get(`/questions/passage/${passageId}`);
+            
+            if (questions && questions.length > 0) {
+                // 문제가 생성되었음
+                isGeneratingQuestions = false;
+                if (generateBtn) {
+                    generateBtn.disabled = false;
+                    generateBtn.textContent = '문제 생성';
+                    generateBtn.style.opacity = '1';
+                    generateBtn.style.cursor = 'pointer';
+                }
+                loadSavedPassages();
+                updateStats();
+                alert('문제 생성이 완료되었습니다!');
+            } else {
+                // 아직 생성 중, 계속 확인
+                checkQuestionGenerationStatus(passageId, generateBtn, attemptCount + 1);
+            }
+        } catch (error) {
+            // 에러가 발생해도 계속 확인 시도
+            console.log('Checking question status...', error);
+            checkQuestionGenerationStatus(passageId, generateBtn, attemptCount + 1);
+        }
+    }, checkInterval);
 }
 
 async function updateStats() {

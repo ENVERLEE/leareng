@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class PdfParserService {
@@ -97,6 +99,18 @@ public class PdfParserService {
         try (PDDocument document = org.apache.pdfbox.Loader.loadPDF(pdfBytes)) {
             PDFTextStripper stripper = new PDFTextStripper();
             return stripper.getText(document);
+        }
+    }
+    
+    @Async
+    public CompletableFuture<List<String>> extractPassagesAsync(byte[] pdfBytes) {
+        try {
+            List<String> passages = extractPassages(pdfBytes);
+            return CompletableFuture.completedFuture(passages);
+        } catch (Exception e) {
+            System.err.println("Error extracting passages asynchronously: " + e.getMessage());
+            e.printStackTrace();
+            return CompletableFuture.failedFuture(e);
         }
     }
 }

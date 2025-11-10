@@ -98,26 +98,15 @@ public class QuestionController {
                 passage = passageService.savePassage(title, passageText);
             }
             
-            // Generate translation
-            String koreanTranslation = questionGeneratorService.generateTranslation(passageText);
-            
-            // Generate questions
-            List<QuestionOutput> questions = questionGeneratorService.generateAllQuestions(passageText);
-            
-            // Save questions
-            questionService.saveQuestions(passage, questions, passageText, koreanTranslation);
-            
-            // Increment question count for free users
-            if (!subscriptionService.checkSubscriptionStatus(user)) {
-                subscriptionService.incrementQuestionCount(user);
-            }
+            // Start async question generation
+            questionGeneratorService.generateQuestionsAsync(passageId, passageText, title, passage, user);
             
             Map<String, Object> response = new HashMap<>();
-            response.put("message", "문제 생성이 완료되었습니다.");
+            response.put("message", "문제 생성이 시작되었습니다. 잠시 후 문제 목록을 확인해주세요.");
             response.put("passageId", passage.getId());
-            response.put("questionCount", questions.size());
+            response.put("status", "processing");
             
-            return ResponseEntity.ok(response);
+            return ResponseEntity.accepted().body(response);
         } catch (Exception e) {
             Map<String, String> error = new HashMap<>();
             error.put("error", "문제 생성 중 오류가 발생했습니다: " + e.getMessage());
