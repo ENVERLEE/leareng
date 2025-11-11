@@ -25,5 +25,11 @@ public class Subscription {
     private Boolean isActive = false;
 
     private LocalDateTime expiryDate;
+
+    @Column(nullable = false, length = 20)
+    private String tier = "FREE"; // FREE, BASIC, PREMIUM, ACADEMY
+
+    @Column(nullable = false, columnDefinition = "NUMBER(1) DEFAULT 0")
+    private Boolean isTrial = false; // 무료 체험 여부
 }
 

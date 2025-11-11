@@ -53,6 +53,7 @@ public class QuestionService {
         
         return questions.stream().map(q -> {
             QuestionOutput qo = new QuestionOutput();
+            qo.setId(q.getId());
             qo.setQuestion(q.getQuestion());
             
             try {

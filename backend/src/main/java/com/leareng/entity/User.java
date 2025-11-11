@@ -34,10 +34,19 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
+    /**
+     * 일일 문제 풀이 개수 (매일 리셋됨)
+     */
     @Column(nullable = false)
     private Integer questionsUsed = 0;
 
+    /**
+     * 마지막 문제 풀이 한도 리셋 시간
+     */
     private LocalDateTime lastQuestionReset;
+
+    @Column(columnDefinition = "NUMBER(10,0) DEFAULT 0")
+    private Integer totalQuestionsSolved = 0;
 
     @PrePersist
     protected void onCreate() {

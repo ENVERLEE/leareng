@@ -23,6 +23,9 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
     
+    @org.springframework.beans.factory.annotation.Value("${app.frontend.url:http://localhost:80}")
+    private String frontendUrl;
+    
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
         try {
@@ -34,6 +37,10 @@ public class AuthController {
             Map<String, String> error = new HashMap<>();
             error.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(error);
+        } catch (Exception e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "회원가입 중 오류가 발생했습니다: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(error);
         }
     }
     
@@ -78,14 +85,14 @@ public class AuthController {
             boolean verified = userService.verifyEmail(email, token);
             if (verified) {
                 // HTML 페이지로 리다이렉트하거나 성공 메시지 반환
-                String htmlResponse = """
+                String htmlResponse = String.format("""
                     <!DOCTYPE html>
                     <html lang="ko">
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>이메일 인증 완료 - Leareng</title>
-                        <link rel="stylesheet" href="css/styles.css">
+                        <link rel="stylesheet" href="%s/css/styles.css">
                     </head>
                     <body>
                         <div class="auth-container">
@@ -94,22 +101,22 @@ public class AuthController {
                                 <div style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;">✓</div>
                                 <h2 style="color: var(--text-primary); margin-bottom: 1rem;">인증이 완료되었습니다!</h2>
                                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">이제 로그인하여 서비스를 이용하실 수 있습니다.</p>
-                                <a href="login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인하기</a>
+                                <a href="%s/login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인하기</a>
                             </div>
                         </div>
                     </body>
                     </html>
-                    """;
+                    """, frontendUrl, frontendUrl);
                 return ResponseEntity.ok().header("Content-Type", "text/html; charset=UTF-8").body(htmlResponse);
             } else {
-                String htmlResponse = """
+                String htmlResponse = String.format("""
                     <!DOCTYPE html>
                     <html lang="ko">
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>이메일 인증 실패 - Leareng</title>
-                        <link rel="stylesheet" href="css/styles.css">
+                        <link rel="stylesheet" href="%s/css/styles.css">
                     </head>
                     <body>
                         <div class="auth-container">
@@ -118,23 +125,23 @@ public class AuthController {
                                 <div style="font-size: 3rem; color: #ef4444; margin-bottom: 1rem;">✗</div>
                                 <h2 style="color: var(--text-primary); margin-bottom: 1rem;">인증에 실패했습니다</h2>
                                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">유효하지 않거나 만료된 링크입니다. 새로운 인증 링크를 요청해주세요.</p>
-                                <a href="login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인 페이지로 이동</a>
+                                <a href="%s/login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인 페이지로 이동</a>
                             </div>
                         </div>
                     </body>
                     </html>
-                    """;
+                    """, frontendUrl, frontendUrl);
                 return ResponseEntity.badRequest().header("Content-Type", "text/html; charset=UTF-8").body(htmlResponse);
             }
         } catch (Exception e) {
-            String htmlResponse = """
+            String htmlResponse = String.format("""
                 <!DOCTYPE html>
                 <html lang="ko">
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>이메일 인증 오류 - Leareng</title>
-                    <link rel="stylesheet" href="css/styles.css">
+                    <link rel="stylesheet" href="%s/css/styles.css">
                 </head>
                 <body>
                     <div class="auth-container">
@@ -143,12 +150,12 @@ public class AuthController {
                             <div style="font-size: 3rem; color: #ef4444; margin-bottom: 1rem;">⚠</div>
                             <h2 style="color: var(--text-primary); margin-bottom: 1rem;">인증 중 오류가 발생했습니다</h2>
                             <p style="color: var(--text-secondary); margin-bottom: 2rem;">잠시 후 다시 시도해주세요.</p>
-                            <a href="login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인 페이지로 이동</a>
+                            <a href="%s/login.html" class="btn-primary" style="display: inline-block; text-decoration: none;">로그인 페이지로 이동</a>
                         </div>
                     </div>
                 </body>
                 </html>
-                """;
+                """, frontendUrl, frontendUrl);
             return ResponseEntity.badRequest().header("Content-Type", "text/html; charset=UTF-8").body(htmlResponse);
         }
     }

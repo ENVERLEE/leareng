@@ -89,14 +89,14 @@
             <!-- Subscription Card -->
             <div class="sidebar-card subscription-card glass-card">
                 <div class="card-header">
-                    <span class="card-badge">
+                    <span class="card-badge" id="subscriptionBadge">
                         <i class="fa-solid fa-crown"></i>
-                        <span>Premium</span>
+                        <span id="subscriptionBadgeText">Premium</span>
                     </span>
-                    <h3>프리미엄 구독</h3>
+                    <h3 id="subscriptionTitle">프리미엄 구독</h3>
                 </div>
                 <div id="subscriptionStatus" class="subscription-status"></div>
-                <button id="subscribeBtn" class="btn-subscribe">
+                <button id="subscribeBtn" class="btn-subscribe" style="display: none;">
                     <i class="fa-solid fa-rocket-launch"></i>
                     <span>구독 신청</span>
                 </button>
@@ -138,15 +138,11 @@
         <main class="app-main animate__animated animate__fadeInUp">
             <section class="hero-panel glass-card">
                 <div class="hero-content">
-                    <span class="hero-chip">
-                        <i class="fa-solid fa-compass"></i>
-                        <span>새로운 대시보드</span>
-                    </span>
                     <h2>
                         집중이 쉬워지는<br>
                         <span class="gradient-text">Leareng 학습 콘솔</span>
                     </h2>
-                    <p>시선을 방해하는 요소를 덜어내고 핵심 흐름만 남겼습니다. 학습, 생성, 라이브러리를 자연스럽게 오가며 필요한 작업에 몰입해 보세요.</p>
+                    <p>시선을 방해하는 요소를 덜어내고 핵심 흐름만 남겼습니다. 학습, 생성, 라이브러리를 자연스럽게 오가며 내신 공부에 몰입해 보세요.</p>
                 </div>
                 <div class="hero-cta">
                     <div class="cta-card glass-tile">
@@ -295,10 +291,6 @@
         <div class="modal glass-card">
             <div class="modal-header">
                 <div class="modal-meta">
-                    <span class="modal-chip">
-                        <i class="fa-solid fa-star"></i>
-                        <span>PERK</span>
-                    </span>
                     <h2>프리미엄 구독 신청</h2>
                 </div>
                 <button class="modal-close" id="closeModalBtn">
@@ -307,9 +299,91 @@
             </div>
             <div class="modal-body">
                 <div class="subscription-info glass-tile">
-                    <h3>프리미엄 평생 구독 안내</h3>
-                    <div class="price">19,900원</div>
-                    <p>프리미엄 구독으로 모든 기능을 무제한으로 이용하세요</p>
+                    <h3>구독 플랜 선택</h3>
+                    <p>원하는 플랜을 선택하여 구독하세요</p>
+                </div>
+
+                <div class="tier-pricing-section">
+                    <div class="tier-pricing-card">
+                        <div class="tier-pricing-header">
+                            <div class="tier-pricing-badge basic">BASIC</div>
+                            <div class="tier-pricing-price">
+                                <span class="price-amount">9,900</span>
+                                <span class="price-unit">원/월</span>
+                            </div>
+                        </div>
+                        <div class="tier-pricing-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> 일일 500개 문제 풀이</li>
+                                <li><i class="fa-solid fa-check"></i> 모든 문제 유형 이용</li>
+                                <li><i class="fa-solid fa-check"></i> PDF 업로드 지원</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tier-pricing-card featured">
+                        <div class="tier-pricing-badge featured-badge">인기</div>
+                        <div class="tier-pricing-header">
+                            <div class="tier-pricing-badge premium">PREMIUM</div>
+                            <div class="tier-pricing-price">
+                                <span class="price-amount">19,900</span>
+                                <span class="price-unit">원/월</span>
+                            </div>
+                        </div>
+                        <div class="tier-pricing-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> 일일 1,000개 문제 풀이</li>
+                                <li><i class="fa-solid fa-check"></i> 모든 문제 유형 이용</li>
+                                <li><i class="fa-solid fa-check"></i> PDF 업로드 지원</li>
+                                <li><i class="fa-solid fa-check"></i> 우선 고객 지원</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tier-pricing-card">
+                        <div class="tier-pricing-header">
+                            <div class="tier-pricing-badge academy">ACADEMY</div>
+                            <div class="tier-pricing-price">
+                                <span class="price-amount">49,900</span>
+                                <span class="price-unit">원/월</span>
+                            </div>
+                        </div>
+                        <div class="tier-pricing-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> <strong>무제한</strong> 문제 풀이</li>
+                                <li><i class="fa-solid fa-check"></i> 모든 문제 유형 이용</li>
+                                <li><i class="fa-solid fa-check"></i> PDF 업로드 지원</li>
+                                <li><i class="fa-solid fa-check"></i> 학원용 특별 혜택</li>
+                                <li><i class="fa-solid fa-check"></i> 전담 고객 지원</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-info glass-tile" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(16, 185, 129, 0.3); margin-top: 1.5rem;">
+                    <h4><i class="fa-solid fa-star" style="color: #10b981;"></i> 무료 체험 시스템</h4>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">BASIC 티어 3일 무료 체험을 신청할 수 있습니다!</p>
+                    <div class="tier-levels">
+                        <div class="tier-item">
+                            <div class="tier-name">FREE</div>
+                            <div class="tier-desc">일일 50개 풀이<br><span style="font-size: 0.7rem; color: var(--text-muted);">무료</span></div>
+                        </div>
+                        <div class="tier-arrow">→</div>
+                        <div class="tier-item">
+                            <div class="tier-name">BASIC</div>
+                            <div class="tier-desc">3일 체험<br><span style="font-size: 0.7rem; color: var(--text-muted);">9,900원/월</span></div>
+                        </div>
+                        <div class="tier-arrow">→</div>
+                        <div class="tier-item">
+                            <div class="tier-name">PREMIUM</div>
+                            <div class="tier-desc">구독 필요<br><span style="font-size: 0.7rem; color: var(--text-muted);">19,900원/월</span></div>
+                        </div>
+                        <div class="tier-arrow">→</div>
+                        <div class="tier-item tier-academy">
+                            <div class="tier-name">ACADEMY</div>
+                            <div class="tier-desc">구독 필요<br><span style="font-size: 0.7rem; color: var(--text-muted);">49,900원/월</span></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="account-info glass-tile">

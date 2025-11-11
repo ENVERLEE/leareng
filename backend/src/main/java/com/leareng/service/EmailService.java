@@ -24,6 +24,9 @@ public class EmailService {
     @Value("${app.frontend.url:http://localhost:80}")
     private String frontendUrl;
     
+    @Value("${app.backend.url:http://localhost:8080}")
+    private String backendUrl;
+    
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
@@ -54,7 +57,7 @@ public class EmailService {
     
     public void sendVerificationEmail(String to, String token) {
         String subject = "Leareng 이메일 인증";
-        String verificationLink = frontendUrl + "/verify-email.html?token=" + token + "&email=" + to;
+        String verificationLink = backendUrl + "/api/auth/verify-email?token=" + token + "&email=" + to;
         String body = String.format("""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                 <h2 style="color: #333; margin-bottom: 20px;">Leareng 이메일 인증</h2>
@@ -73,6 +76,7 @@ public class EmailService {
     
     public void sendPasswordResetEmail(String to, String token) {
         String subject = "Leareng 비밀번호 재설정";
+        // 비밀번호 재설정은 프론트엔드 페이지로 이동
         String resetLink = frontendUrl + "/reset-password.html?token=" + token;
         String body = String.format("""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">

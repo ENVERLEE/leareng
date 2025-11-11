@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -35,6 +37,9 @@ public class UserService {
     @Autowired
     private EmailService emailService;
     
+    @PersistenceContext
+    private EntityManager entityManager;
+    
     @Transactional
     public User registerUser(String email, String password) {
         Optional<User> existingUser = userRepository.findByEmail(email);
@@ -48,6 +53,9 @@ public class UserService {
             // 미인증 사용자인 경우 기존 데이터 삭제
             tokenRepository.deleteByEmail(email);
             userRepository.delete(user);
+            // 삭제를 즉시 데이터베이스에 반영
+            entityManager.flush();
+            entityManager.clear();
         }
         
         logger.info("Creating new user for email: {}", email);

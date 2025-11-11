@@ -141,16 +141,21 @@ async function generateFromPdf(idx, passageText) {
     window.isGeneratingQuestions = true;
     showLoading('문제 생성을 시작했습니다. 백그라운드에서 생성 중입니다...');
     
-    try {
-        const response = await api.post('/questions/generate', { text: passageText, title });
-        hideLoading();
-        
-        // 즉시 응답을 받았으므로 백그라운드에서 생성 중임을 알림
-        if (response.status === 'processing' && response.passageId) {
-            alert('문제 생성이 시작되었습니다. 잠시 후 자동으로 업데이트됩니다.');
+        try {
+            const response = await api.post('/questions/generate', { text: passageText, title });
+            hideLoading();
             
-            // 주기적으로 문제 생성 완료 여부 확인
-            checkQuestionGenerationStatusFromPdf(response.passageId, generateBtn);
+            // 즉시 응답을 받았으므로 백그라운드에서 생성 중임을 알림
+            if (response.status === 'processing' && response.passageId) {
+                // 로컬 스토리지에 문제 생성 요청 타임스탬프 저장
+                const generatingPassages = JSON.parse(localStorage.getItem('generatingPassages') || '{}');
+                generatingPassages[response.passageId] = Date.now();
+                localStorage.setItem('generatingPassages', JSON.stringify(generatingPassages));
+                
+                alert('문제 생성이 시작되었습니다. 잠시 후 자동으로 업데이트됩니다.');
+                
+                // 주기적으로 문제 생성 완료 여부 확인
+                checkQuestionGenerationStatusFromPdf(response.passageId, generateBtn);
         } else {
             alert('문제 생성이 완료되었습니다!');
             if (typeof loadSavedPassages === 'function') {
@@ -203,7 +208,11 @@ async function checkQuestionGenerationStatusFromPdf(passageId, generateBtn, atte
             const questions = await api.get(`/questions/passage/${passageId}`);
             
             if (questions && questions.length > 0) {
-                // 문제가 생성되었음
+                // 문제가 생성되었음 - 로컬 스토리지에서 제거
+                const generatingPassages = JSON.parse(localStorage.getItem('generatingPassages') || '{}');
+                delete generatingPassages[passageId];
+                localStorage.setItem('generatingPassages', JSON.stringify(generatingPassages));
+                
                 window.isGeneratingQuestions = false;
                 if (generateBtn) {
                     generateBtn.disabled = false;
@@ -305,6 +314,11 @@ if (document.getElementById('generateQuestionsBtn')) {
             
             // 즉시 응답을 받았으므로 백그라운드에서 생성 중임을 알림
             if (response.status === 'processing' && response.passageId) {
+                // 로컬 스토리지에 문제 생성 요청 타임스탬프 저장
+                const generatingPassages = JSON.parse(localStorage.getItem('generatingPassages') || '{}');
+                generatingPassages[response.passageId] = Date.now();
+                localStorage.setItem('generatingPassages', JSON.stringify(generatingPassages));
+                
                 alert('문제 생성이 시작되었습니다. 잠시 후 자동으로 업데이트됩니다.');
                 
                 // 주기적으로 문제 생성 완료 여부 확인
@@ -362,7 +376,11 @@ async function checkQuestionGenerationStatusManual(passageId, generateBtn, attem
             const questions = await api.get(`/questions/passage/${passageId}`);
             
             if (questions && questions.length > 0) {
-                // 문제가 생성되었음
+                // 문제가 생성되었음 - 로컬 스토리지에서 제거
+                const generatingPassages = JSON.parse(localStorage.getItem('generatingPassages') || '{}');
+                delete generatingPassages[passageId];
+                localStorage.setItem('generatingPassages', JSON.stringify(generatingPassages));
+                
                 window.isGeneratingQuestions = false;
                 if (generateBtn) {
                     generateBtn.disabled = false;

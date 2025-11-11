@@ -317,10 +317,7 @@ public class QuestionGeneratorService {
             // Save questions
             questionService.saveQuestions(passage, questions, passageText, koreanTranslation);
             
-            // Increment question count for free users
-            if (!subscriptionService.checkSubscriptionStatus(user)) {
-                subscriptionService.incrementQuestionCount(user);
-            }
+            // 문제 생성은 이제 제한이 없음 (문제 풀이에만 제한 적용)
             
             return CompletableFuture.completedFuture(null);
         } catch (Exception e) {
@@ -329,4 +326,5 @@ public class QuestionGeneratorService {
             return CompletableFuture.failedFuture(e);
         }
     }
+}
 

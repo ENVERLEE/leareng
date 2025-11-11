@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Data
 public class QuestionOutput {
+    private Long id;
     private String question;
     private List<String> choices;
     
