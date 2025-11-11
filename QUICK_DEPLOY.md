@@ -24,7 +24,7 @@ DB_PASSWORD=your_password
 EMAIL_ADDRESS=your_email@gmail.com
 EMAIL_PASSWORD=your_app_password
 JWT_SECRET_KEY=your-secret-key-32-chars-min
-OPENAI_API_KEY=sk-your-key
+CEREBRAS_API_KEY=your-cerebras-api-key
 FRONTEND_URL=https://your-frontend.railway.app
 CORS_ALLOWED_ORIGINS=https://your-frontend.railway.app
 ```

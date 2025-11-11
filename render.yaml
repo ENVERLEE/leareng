@@ -25,7 +25,7 @@ services:
         value: 587
       - key: JWT_SECRET_KEY
         sync: false
-      - key: OPENAI_API_KEY
+      - key: CEREBRAS_API_KEY
         sync: false
       - key: FRONTEND_URL
         sync: false

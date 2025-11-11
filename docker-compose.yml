@@ -18,7 +18,7 @@ services:
       EMAIL_ADDRESS: ${EMAIL_ADDRESS}
       EMAIL_PASSWORD: ${EMAIL_PASSWORD}
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:-your-secret-key-change-this}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      CEREBRAS_API_KEY: ${CEREBRAS_API_KEY}
 
   frontend:
     image: nginx:alpine

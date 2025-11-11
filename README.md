@@ -7,7 +7,7 @@ Spring Boot + Vanilla JavaScript로 구현된 한국 수능 영어 문제 생성
 - ✅ 사용자 인증 (이메일 인증 포함)
 - ✅ 구독 관리 (무료/프리미엄)
 - ✅ PDF 업로드 및 지문 추출
-- ✅ OpenAI GPT 기반 문제 생성 (10가지 유형)
+- ✅ Cerebras GPT 기반 문제 생성 (10가지 유형)
 - ✅ 지문 및 문제 저장/조회
 - ✅ 학습 모드 (문제 풀이, 정답 확인, 해설)
 - ✅ 한국어 번역 제공
@@ -20,7 +20,7 @@ Spring Boot + Vanilla JavaScript로 구현된 한국 수능 영어 문제 생성
 - Spring Security + JWT
 - Spring Data JPA
 - MySQL 8.0
-- OpenAI API
+- Cerebras API
 - Apache PDFBox
 
 ### Frontend
@@ -61,7 +61,7 @@ DB_PASSWORD=your_password
 EMAIL_ADDRESS=your_email@gmail.com
 EMAIL_PASSWORD=your_app_password
 JWT_SECRET_KEY=your-secret-key-min-32-characters
-OPENAI_API_KEY=your-openai-api-key
+CEREBRAS_API_KEY=your-cerebras-api-key
 ```
 
 ### 2. MySQL 데이터베이스 생성

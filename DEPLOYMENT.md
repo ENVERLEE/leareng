@@ -53,8 +53,8 @@ MAIL_PORT=587
 # JWT
 JWT_SECRET_KEY=your-very-secret-key-change-this
 
-# OpenAI
-OPENAI_API_KEY=your_openai_api_key
+# Cerebras
+CEREBRAS_API_KEY=your_cerebras_api_key
 
 # 프론트엔드 URL (Railway가 제공하는 도메인)
 FRONTEND_URL=https://your-frontend-domain.railway.app
@@ -136,7 +136,7 @@ fly secrets set DB_PASSWORD="your_password"
 fly secrets set EMAIL_ADDRESS="your_email"
 fly secrets set EMAIL_PASSWORD="your_password"
 fly secrets set JWT_SECRET_KEY="your_secret"
-fly secrets set OPENAI_API_KEY="your_key"
+fly secrets set CEREBRAS_API_KEY="your_key"
 fly secrets set FRONTEND_URL="https://your-frontend.fly.dev"
 fly deploy
 ```
@@ -188,7 +188,7 @@ fly deploy
 - [ ] `frontend/js/api.js`에서 백엔드 URL 설정
 - [ ] Oracle 데이터베이스 접근 가능한지 확인
 - [ ] 이메일 SMTP 설정 확인
-- [ ] OpenAI API 키 설정
+- [ ] Cerebras API 키 설정
 - [ ] JWT Secret Key를 강력한 값으로 변경
 
 ---

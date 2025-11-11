@@ -21,10 +21,10 @@ public class OpenAIApiService {
     private WebClient webClient;
     private final ObjectMapper objectMapper;
     
-    @Value("${openai.api.key}")
+    @Value("${cerebras.api.key}")
     private String apiKey;
     
-    @Value("${openai.api.url}")
+    @Value("${cerebras.api.url}")
     private String apiUrl;
     
     public OpenAIApiService(ObjectMapper objectMapper) {
@@ -42,15 +42,12 @@ public class OpenAIApiService {
     
     public Mono<String> generateText(String systemMessage, String userMessage) {
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("model", "gpt-5-nano");
-        
-        // gpt-5-nano 모델에 필요한 파라미터
-        Map<String, String> responseFormat = new HashMap<>();
-        responseFormat.put("type", "text");
-        requestBody.put("response_format", responseFormat);
-        requestBody.put("verbosity", "medium");
+        requestBody.put("model", "gpt-oss-120b");
+        requestBody.put("stream", false);
+        requestBody.put("max_tokens", 65536);
+        requestBody.put("temperature", 1);
+        requestBody.put("top_p", 1);
         requestBody.put("reasoning_effort", "medium");
-        requestBody.put("store", false);
         
         List<Map<String, String>> messages = new ArrayList<>();
         
@@ -82,9 +79,9 @@ public class OpenAIApiService {
                                     if (errorMessage.isEmpty()) {
                                         errorMessage = errorBody;
                                     }
-                                    return Mono.error(new RuntimeException("OpenAI API Error (" + response.statusCode() + "): " + errorMessage));
+                                    return Mono.error(new RuntimeException("Cerebras API Error (" + response.statusCode() + "): " + errorMessage));
                                 } catch (Exception e) {
-                                    return Mono.error(new RuntimeException("OpenAI API Error (" + response.statusCode() + "): " + errorBody));
+                                    return Mono.error(new RuntimeException("Cerebras API Error (" + response.statusCode() + "): " + errorBody));
                                 }
                             });
                 })
@@ -95,14 +92,14 @@ public class OpenAIApiService {
                         JsonNode message = choices.get(0).path("message");
                         JsonNode content = message.path("content");
                         if (content.isMissingNode() || content.asText().isEmpty()) {
-                            throw new RuntimeException("OpenAI API returned empty content");
+                            throw new RuntimeException("Cerebras API returned empty content");
                         }
                         return content.asText();
                     }
-                    throw new RuntimeException("Invalid response from OpenAI API: no choices found");
+                    throw new RuntimeException("Invalid response from Cerebras API: no choices found");
                 })
                 .doOnError(error -> {
-                    System.err.println("OpenAI API request failed:");
+                    System.err.println("Cerebras API request failed:");
                     System.err.println("Request body: " + requestBody);
                     System.err.println("Error: " + error.getMessage());
                 });
