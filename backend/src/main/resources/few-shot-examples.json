@@ -1,0 +1,679 @@
+{
+  "title_theme": {
+    "examples": [
+      {
+        "passage": "Crying is a human characteristic that other animals do not have. Though some species shed tears as a result of pain or irritation, humans are currently known as the only creatures whose tears can be triggered by their feelings. Charles Darwin once declared emotional tears \"purposeless.\" Contrary to Darwin's declaration, however, scientists have recently found that crying plays a far more important role than was once believed. First, let's define the terms. Crying is scientifically defined as the shedding of tears in response to an emotional state. These tears are called psychic or emotional tears. Differentiated from psychic or emotional tears, non-emotional tears are divided into two types: basal tears and reflex tears. Basal tears flow continuously to moisturize the eyes. When you blink, basal tears clean your eyes, making the eyes' outer surface smooth, and helping you see clearly. Normally, you are not conscious of the flow of basal tears until your eyes get dry due to their absence. Reflex tears are the tears you shed in spite of yourself when, for instance, you slice a raw onion or encounter a cloud of dust. These tears help clear the eyes of such irritants as the gas from the onion or dust particles. When a tear is produced from the lacrimal gland, you blink in spite of yourself, spreading the tear as a film across your eye. Your tear then has two fates. First, it can drain down the tiny hole in the corner of the eye, like the sink plug in your kitchen, and then flow through your nose. That is why your nose runs when you cry. Second, when you are in a state of extreme sadness or pain, you have a really good cry, and your drainage system simply cannot deal with the volume of tears. The excess fluid now flows over your eyelids and down your cheeks.",
+        "question": "다음 글의 제목으로 가장 적절한 것은?",
+        "choices": [
+          "Theories of Tears",
+          "The Origin of Tears",
+          "The Definition of Tears",
+          "Substances of Tears",
+          "Types of Tears"
+        ],
+        "correct_answer": 5,
+        "explanation": "지문은 감정적 눈물과 비감정적 눈물(기초·반사 눈물) 등 눈물의 종류와 기능을 설명하므로 'Types of Tears'가 가장 적절합니다."
+      },
+      {
+        "passage": "Historically, palaces weren’t just homes; they were carefully constructed stages designed to impress and intimidate. While stone symbolized permanence and strength, glass offered something equally powerful: visibility. The introduction of large windows in palaces allowed rulers to literally look down upon their subjects, emphasizing their elevated position. Conversely, it also allowed subjects to gaze up at their leaders, creating a sense of awe and distance. Consider the Palace of Versailles: its Hall of Mirrors, lined with reflective surfaces, not only magnified the grandeur of the space but also placed the king at the center of a dazzling display, reinforcing his absolute authority. The use of glass in palaces wasn’t merely aesthetic; it was strategic. Open sightlines allowed for better surveillance and control, ensuring the safety and security of the ruling family. Courtiers and visitors were constantly aware of being observed, contributing to an atmosphere of careful obedience and respect. The very architecture dictated social behavior, with glass acting as a silent enforcer of the power dynamic.",
+        "question": "다음 글의 제목으로 가장 적절한 것은?",
+        "choices": [
+          "Glass and Power in Architecture",
+          "The Weakness of Palaces",
+          "Royal Family Traditions",
+          "Luxury and Comfort in the Palace",
+          "Decline of Monarchy"
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 유리와 건축을 통해 권력이 시각적으로 드러나고 사회적 행동을 조절하는 역할을 설명하므로 ①이 적절합니다."
+      },
+      {
+        "passage": "We can discard or replace a scientific theory only if we have a better way of explaining the evidence that supports it. The theories of Newton and Einstein offer great examples. A vast body of evidence supports Newton’s theory of gravity, but by the late nineteenth century scientists had begun to discover cases where its predictions did not perfectly match observations. These discrepancies were explained only when Einstein developed his general theory of relativity, which was able to match the observations. Still, the many successes of Newton’s theory could not be ignored, and Einstein’s theory would not have gained acceptance if it had not been able to explain these successes equally well. It did, and that is why we now view Einstein’s theory as a broader theory of gravity than Newton’s theory. Some scientists today are seeking a theory of gravity that will go beyond Einstein’s. If any new theory ever gains acceptance, it will have to match all the successes of Einstein’s theory as well as work in new realms where Einstein’s theory does not.",
+        "question": "다음 글의 제목으로 가장 적절한 것은?",
+        "choices": [
+          "Newton's Failures",
+          "How Theories Are Replaced",
+          "Einstein's Biography",
+          "The Limits of Observation",
+          "Comparing Scientific Instruments"
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 과학 이론이 어떻게 대체되거나 확장되는지(증거 설명 능력 기준)를 설명하므로 'How Theories Are Replaced'가 적절합니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day, taking a moment to refresh your mind and recharge your energy. This power of a midday break is often underestimated. When you break away from routine, especially with activities designed to stimulate your brain, you prevent cognitive tiredness and enhance productivity for the rest of the day. Neurobic exercises — simple yet effective — are perfect for such breaks. They target different areas of your brain, keeping it agile and alert. These exercises create a mental oasis that refreshes and prepares you for the afternoon’s challenges. This strategic pause is not just a break; it boosts your cognitive capabilities, ensuring your mind remains sharp and focused. Even briefly experimenting with neurobic exercises can work wonders for your cognitive state during lunch. Start with using your non-dominant hand for routine tasks like writing or eating. This simple switch challenges your brain, activating pathways that aren’t typically engaged and promoting greater flexibility in thinking.",
+        "question": "다음 글의 제목으로 가장 적절한 것은?",
+        "choices": [
+          "The Dangers of Midday Naps",
+          "Midday Breaks and Neurobic Exercises",
+          "Sleep and Productivity",
+          "The History of Neurobics",
+          "Diet and Cognitive Health"
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 중간 휴식의 가치와 뉴로빅(neurobic) 운동의 효과를 설명하므로 ②이 가장 적절합니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities, so each perspective on the body can potentially enhance the others. And yet every scientific tool, from microscopes to mathematics, and every aspect of the body, from the brain to the microorganism, requires such depth of expertise that this tends not to happen: we tend to study the human body in silos, each community sectioned from the others by its own specialised vocabulary. Research communities may be dedicated to one type of scientific tool or a specific component of the body, such as one type of cell. How different types of cell communicate with one another becomes its own specialist topic. Even simple forms of life on Earth are now rarely studied as a whole, and the human body is evidently much more complex. As long ago as 1890, The Times newspaper commented that knowledge 'had already become too vast to be manageable'. Today, nobody is an expert in the whole of anything.",
+        "question": "다음 글의 제목으로 가장 적절한 것은?",
+        "choices": [
+          "The Limits of Expertise",
+          "Wine Tasting Techniques",
+          "The Rise of Microscopy",
+          "Comprehensive Biology Education",
+          "The Times in 1890"
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 전문화로 인해 전체(총체적) 지식 습득이 어려워진 현실을 논하므로 'The Limits of Expertise'가 적절합니다."
+      }
+    ]
+  },
+  "blank_inference": {
+    "examples": [
+      {
+        "passage": "Crying is a human characteristic that other animals do not have. (A) some species shed tears as a result of pain or irritation, humans are currently known as the only creatures whose tears can be triggered by their feelings. Charles Darwin once declared emotional tears \"purposeless.\" (B) Darwin's declaration, however, scientists have recently found that crying plays a far more important role than was once believed.",
+        "question": "빈칸 (A), (B)에 들어갈 가장 알맞은 말은?",
+        "choices": [
+          "Nevertheless - For instance",
+          "On the contrary - Simultaneously",
+          "Therefore - To begin with",
+          "Though - Contrary to",
+          "For instance - Nonetheless"
+        ],
+        "correct_answer": 4,
+        "explanation": "첫 빈칸은 양보를 나타내는 'Though'가 적절하고, 두 번째는 '다윈의 주장과 반대로' 의미의 'Contrary to'가 적절합니다."
+      },
+      {
+        "passage": "When a tear is produced from the lacrimal gland, you blink in spite of yourself, spreading the tear as a film across your eye. Your tear then has two fates. First, it can drain down the tiny hole in the corner of the eye, like the sink plug in your kitchen, and then flow through your nose. That is why _____ when you cry. Second, when you are in a state of extreme sadness or pain, you have a really good cry, and your drainage system simply cannot deal with the volume of tears. The excess fluid now flows over your eyelids and down your cheeks.",
+        "question": "빈칸에 들어갈 말로 가장 적절한 것은?",
+        "choices": [
+          "you feel miserable",
+          "you feel your nose burn",
+          "you feel tears inside your throat",
+          "you have runny nose",
+          "tears taste salty"
+        ],
+        "correct_answer": 4,
+        "explanation": "지문 전후 문맥상 '눈물이 코로 흘러 코가 흐른다'는 의미이므로 'you have runny nose'가 정답입니다."
+      },
+      {
+        "passage": "First, let’s define the terms. Crying is scientifically defined as the shedding of tears in response to an emotional state. These tears are called psychic or emotional tears. Differentiated from psychic or emotional tears, non-emotional tears are divided into two types: basal tears and reflex tears. Basal tears flow continuously to moisturize the eyes. When you blink, basal tears clean your eyes, making the eyes’ outer surface smooth, and helping you see clearly. Normally, you are not conscious of the flow of basal tears until your eyes get dry due to their absence.",
+        "question": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?",
+        "choices": [
+          "presence",
+          "absence",
+          "salinity",
+          "viscosity",
+          "temperature"
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 '눈물이 없을 때(=absence) 눈이 건조해진다'고 말하므로 'absence'가 맞습니다."
+      },
+      {
+        "passage": "Differentiated from psychic or emotional tears, non-emotional tears are divided into two types: basal tears and reflex tears. Basal tears flow continuously to moisturize the eyes. When you blink, basal tears clean your eyes, making the eyes’ outer surface smooth, and helping you see clearly.",
+        "question": "다음 빈칸에 들어갈 단어로 가장 알맞은 것은?",
+        "choices": [
+          "moisturize",
+          "irritate",
+          "evaporate",
+          "curdle",
+          "solidify"
+        ],
+        "correct_answer": 1,
+        "explanation": "지문에서 basal tears의 역할을 설명하며 '눈을 촉촉하게 한다'는 의미로 'moisturize'가 적절합니다."
+      },
+      {
+        "passage": "Reflex tears are the tears you shed in spite of yourself when, for instance, you slice a raw onion or encounter a cloud of dust. These tears help clear the eyes of such irritants as the gas from the onion or dust particles.",
+        "question": "다음 (A),(B)에 들어갈 말로 가장 적절한 것은?",
+        "choices": [
+          "psychic - irritants",
+          "emotional - irritants",
+          "non-emotional - nutrients",
+          "basal - pollutants",
+          "reflex - antioxidants"
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 감정적 눈물을 'psychic or emotional tears'라 부르고, 반사적 눈물이 'irritants'를 제거한다고 하므로 'emotional - irritants'가 가장 적절합니다."
+      }
+    ]
+  },
+  "sentence_insertion": {
+    "examples": [
+      {
+        "passage": "First, let’s define the terms. Crying is scientifically defined as the shedding of tears in response to an emotional state. ( ① ) Differentiated from psychic or emotional tears, non-emotional tears are divided into two types: basal tears and reflex tears. Basal tears flow continuously to moisturize the eyes. ( ② ) When you blink, basal tears clean your eyes, making the eyes’ outer surface smooth, and helping you see clearly. ( ③ ) Normally, you are not conscious of the flow of basal tears until your eyes get dry due to their absence. ( ④ ) Reflex tears are the tears you shed in spite of yourself when, for instance, you slice a raw onion or encounter a cloud of dust. ( ⑤ ) These tears help clear the eyes of such irritants as the gas from the onion or dust particles.",
+        "question": "다음 문장 'These tears are called psychic or emotional tears.'이 들어가기에 가장 적절한 위치는?",
+        "choices": [
+          "①",
+          "②",
+          "③",
+          "④",
+          "⑤"
+        ],
+        "correct_answer": 1,
+        "explanation": "해당 문장은 '감정적 눈물'을 정의하는 문장으로, 'Crying is ... emotional state.' 바로 뒤(①)에 와야 자연스럽습니다."
+      },
+      {
+        "passage": "First, let’s define the terms. Crying is scientifically defined as the shedding of tears in response to an emotional state. These tears are called psychic or emotional tears. Differentiated from psychic or emotional tears, non-emotional tears are divided into two types: basal tears and reflex tears. ( ① ) Basal tears flow continuously to moisturize the eyes. When you blink, basal tears clean your eyes, making the eyes’ outer surface smooth, and helping you see clearly. ( ② ) Normally, you are not conscious of the flow of basal tears until your eyes get dry due to their absence. ( ③ ) Reflex tears are the tears you shed in spite of yourself when, for instance, you slice a raw onion or encounter a cloud of dust. ( ④ ) When a tear is produced from the lacrimal gland, you blink in spite of yourself, spreading the tear as a film across your eye. Your tear then has two fates. ( ⑤ ) First, it can drain down the tiny hole in the corner of the eye, like the sink plug in your kitchen, and then flow through your nose. That is why your nose runs when you cry.",
+        "question": "다음 문장 'These tears help clear the eyes of such irritants as the gas from the onion or dust particles.'이 들어가기에 가장 적절한 위치는?",
+        "choices": [
+          "①",
+          "②",
+          "③",
+          "④",
+          "⑤"
+        ],
+        "correct_answer": 4,
+        "explanation": "이 문장은 'reflex tears'의 기능을 설명하므로 reflex tears가 도입되는 자리(④)에 넣는 것이 적절합니다."
+      },
+      {
+        "passage": "When you are working in healthcare, it is important to develop a solid professional relationship with your patients. By establishing realistic self-boundaries, you can protect that relationship. It is important to keep the focus on the patient. When working with patients who are seen frequently, it is easy to start to think of them as friends. ( ① ) With a friend, you are likely to share personal information that is not appropriate with a patient. Patients may feel that they cannot share important health-related information because you are their friend, and it would be embarrassing to share that information. Self-boundaries can also be thought of as professional boundaries. You need to treat patients with respect and keep the relationship professional. Be friendly to patients and always keep the focus on the patient.",
+        "question": "다음 문장 'With a friend, you are likely to share personal information that is not appropriate with a patient.'이 들어가기에 가장 적절한 위치는?",
+        "choices": [
+          "① (문단 맨 앞)",
+          "② (직후)",
+          "③ (중간)",
+          "④ (끝)",
+          "⑤ (들어갈 수 없음)"
+        ],
+        "correct_answer": 2,
+        "explanation": "문맥상 '친구처럼 느끼기 시작하면'이라는 문장이 앞에 와야 'With a friend...' 문장이 자연스럽게 연결됩니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day, taking a moment to refresh your mind and recharge your energy. This power of a midday break is often underestimated. ( ① ) When you break away from routine, especially with activities designed to stimulate your brain, you prevent cognitive tiredness and enhance productivity for the rest of the day. Neurobic exercises simple yet effective are perfect for such breaks. ( ② ) They target different areas of your brain, keeping it agile and alert. These exercises create a mental oasis that refreshes and prepares you for the afternoon’s challenges.",
+        "question": "다음 문장 'When you break away from routine, especially with activities designed to stimulate your brain, you prevent cognitive tiredness...'이 들어가기에 가장 알맞은 위치는?",
+        "choices": [
+          "①",
+          "②",
+          "문장 없음",
+          "들어갈 수 없다",
+          "둘 다 가능"
+        ],
+        "correct_answer": 1,
+        "explanation": "해당 문장은 '한낮 휴식의 힘'을 구체화하는 문장이므로 (①) 위치가 적절합니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities, so each perspective on the body can potentially enhance the others. And yet every scientific tool, from microscopes to mathematics, and every aspect of the body, from the brain to the microorganism, requires such depth of expertise that this tends not to happen: we tend to study the human body in silos, each community sectioned from the others by its own specialised vocabulary. Research communities may be dedicated to one type of scientific tool or a specific component of the body, such as one type of cell. How different types of cell communicate with one another becomes its own specialist topic. Even simple forms of life on Earth are now rarely studied as a whole, and the human body is evidently much more complex. As long ago as 1890, The Times newspaper commented that knowledge 'had already become too vast to be manageable'. Today, nobody is an expert in the whole of anything.",
+        "question": "다음 문장 'And yet every scientific tool ... requires such depth of expertise that this tends not to happen'은 어디에 들어가야 자연스러운가?",
+        "choices": [
+          "문단 앞부분",
+          "중간(도입 후 바로)",
+          "마지막 문장",
+          "들어갈 수 없음",
+          "어느 자리에나 어울림"
+        ],
+        "correct_answer": 2,
+        "explanation": "도입부(비유) 직후에 과학 연구의 분절화 문제를 설명하는 문장이 와야 자연스럽습니다."
+      }
+    ]
+  },
+  "order_arrangement": {
+    "examples": [
+      {
+        "passage": "When a cell divides, the genomes of its two daughters are often not quite identical to each other or to that of the parent cell. On rare occasions, the error may represent a change for the better; more probably, it will cause no significant difference in the cell’s prospects. But in some cases, the error will cause serious damage; for example, by disrupting the coding sequence for a key protein. Changes due to mistakes of the first type will tend to be perpetuated, because the altered cell has an increased likelihood of reproducing itself. Changes due to mistakes of the second type — neutral changes — may be perpetuated or not: it is a matter of chance whether the altered cell or its cousins will succeed. But changes that cause serious damage lead nowhere: the cell that suffers them dies, leaving no progeny. Through endless repetition of this cycle of mutation and natural selection organisms evolve: their genetic specifications change, sometimes giving organisms new ways to exploit the environment more effectively, to survive in competition with others, and to reproduce successfully.",
+        "question": "다음 문장들을 글의 흐름에 맞게 올바른 순서로 배열하세요: (A) Through endless repetition ... organisms evolve. (B) Changes due to mistakes of the first type will tend to be perpetuated... (C) On rare occasions, the error may represent a change for the better... (D) But changes that cause serious damage lead nowhere... (E) Changes due to mistakes of the second type ... may be perpetuated or not.",
+        "choices": [
+          "A-B-C-D-E",
+          "C-B-E-D-A",
+          "B-C-E-D-A",
+          "C-E-B-D-A",
+          "C-B-E-A-D"
+        ],
+        "correct_answer": 2,
+        "explanation": "논리적 전개: (C) 드물게/보통 → (B) 첫 번째 유형의 변화는 계속됨 → (E) 두 번째 유형은 우연성 → (D) 심각한 손상은 끝 → (A) 반복을 통해 진화."
+      },
+      {
+        "passage": "Within liberal culture, the value of fair equality of opportunity for individuals outweighs the preservation of the family's integrity. In contrast, for Confucian culture, while seeking fair equality of opportunity for individuals is important, the family assumes a fundamental role in human flourishing, and living within a family institution is considered the essential way of life. Individuals are primarily understood as family members before they are regarded as state citizens. Therefore, for Confucians, the family possesses inherent value that should never be abandoned, even if it results in certain societal inequalities. Some cultures, like the liberal one, may choose to impose increasing restrictions on the role of families and implement more egalitarian government programs for education, healthcare, and other positive rights in society in the pursuit of fair equality of opportunity. On the other hand, other cultures, like the Confucian one, may prefer to primarily assign welfare responsibilities to the family, accepting inequalities stemming from the existence of the family as long as everyone's basic freedoms and rights are safeguarded in the state.",
+        "question": "다음 문장들을 글의 흐름에 맞게 배열하세요: (A) Within liberal culture... (B) Individuals are primarily understood... (C) Some cultures, like the liberal one... (D) On the other hand, other cultures... (E) Therefore, for Confucians...",
+        "choices": [
+          "A-B-C-E-D",
+          "A-E-B-C-D",
+          "A-C-B-D-E",
+          "A-B-E-D-C",
+          "A-B-C-D-E"
+        ],
+        "correct_answer": 5,
+        "explanation": "원문 흐름에 따라 ⑤가 정답입니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities, so each perspective on the body can potentially enhance the others. And yet every scientific tool, from microscopes to mathematics, and every aspect of the body, from the brain to the microorganism, requires such depth of expertise that this tends not to happen: we tend to study the human body in silos, each community sectioned from the others by its own specialised vocabulary. Research communities may be dedicated to one type of scientific tool or a specific component of the body, such as one type of cell. How different types of cell communicate with one another becomes its own specialist topic. Even simple forms of life on Earth are now rarely studied as a whole, and the human body is evidently much more complex. As long ago as 1890, The Times newspaper commented that knowledge 'had already become too vast to be manageable'. Today, nobody is an expert in the whole of anything.",
+        "question": "문장들을 흐름에 맞게 배열하세요: (A) We tend to study the human body in silos. (B) Just as an expert... chemistry..., (C) Research communities may be dedicated..., (D) Even simple forms... are now rarely studied as a whole, (E) As long ago as 1890... 'too vast'...",
+        "choices": [
+          "B-A-C-D-E",
+          "B-C-A-D-E",
+          "A-B-C-E-D",
+          "B-A-D-C-E",
+          "C-A-B-D-E"
+        ],
+        "correct_answer": 1,
+        "explanation": "원문은 비유(B) → 문제점 진술(A) → 구체화(C) → 일반화(D) → 역사적 인용(E)의 순으로 전개됩니다."
+      },
+      {
+        "passage": "When a tear is produced from the lacrimal gland, you blink in spite of yourself, spreading the tear as a film across your eye. Your tear then has two fates. First, it can drain down the tiny hole in the corner of the eye, like the sink plug in your kitchen, and then flow through your nose. That is why your nose runs when you cry. Second, when you are in a state of extreme sadness or pain, you have a really good cry, and your drainage system simply cannot deal with the volume of tears. The excess fluid now flows over your eyelids and down your cheeks.",
+        "question": "다음 문장 순서를 글의 흐름에 맞게 배열하세요: (A) Your tear then has two fates. (B) First, it can drain down the tiny hole... (C) That is why your nose runs... (D) Second, when you are in a state of extreme sadness... (E) The excess fluid now flows over your eyelids...",
+        "choices": [
+          "A-B-C-D-E",
+          "A-D-E-B-C",
+          "B-A-C-D-E",
+          "A-B-D-C-E",
+          "B-C-A-D-E"
+        ],
+        "correct_answer": 1,
+        "explanation": "원문 흐름은 '두 가지 운명(A) → 첫 번째(B) → (이로 인해) 코가 흐른다(C) → 두 번째(D) → 결과(E)'로 전개됩니다."
+      },
+      {
+        "passage": "Experiments testify to science’s embrace of ignorance. Arguably the worst thing a scientist can do is to suppose they know what will happen in a given scenario without bothering to check. The rise of the experimental philosophy coincided with the liberation of curiosity as a valuable rather than a questionable attribute. For all that experimental science today is often assumed to be supported by a philosophical framework and an approved methodology (“state your hypothesis and then test it”), the fact is that, as philosopher of science Ian Hacking says, 'One can conduct an experiment simply out of curiosity to see what will happen.' Indeed, in the view of Charles Darwin’s son, the astronomer George Darwin, once in a while one should do a completely crazy experiment, even if it is most likely to prove fruitless. You never know until you try.",
+        "question": "다음 문장들을 글의 흐름에 맞게 배열하세요: (A) Experiments testify to science's embrace of ignorance. (B) The rise of experimental philosophy... (C) Ian Hacking quote... (D) George Darwin suggestion... (E) Worst thing a scientist can do is suppose...",
+        "choices": [
+          "A-E-B-C-D",
+          "E-A-B-D-C",
+          "A-B-E-C-D",
+          "A-B-C-D-E",
+          "B-A-E-C-D"
+        ],
+        "correct_answer": 1,
+        "explanation": "원문 전개: 도입(A) → 경고(E) → 역사적 배경(B) → 인용(C) → 제안(D) 순이 자연스럽습니다."
+      }
+    ]
+  },
+  "vocabulary": {
+    "examples": [
+      {
+        "passage": "Basal tears flow continuously to moisturize the eyes. When you blink, basal tears clean your eyes, making the eyes' outer surface smooth, and helping you see clearly. Normally, you are not conscious of the flow of basal tears until your eyes get dry due to their absence.",
+        "question": "다음 중 'absence'와 가장 의미가 반대인 단어는?",
+        "choices": [
+          "presence",
+          "void",
+          "lack",
+          "gap",
+          "emptiness"
+        ],
+        "correct_answer": 1,
+        "explanation": "'absence'의 반대말은 'presence'입니다."
+      },
+      {
+        "passage": "Reflex tears are the tears you shed in spite of yourself when, for instance, you slice a raw onion or encounter a cloud of dust. These tears help clear the eyes of such irritants as the gas from the onion or dust particles.",
+        "question": "밑줄 친 'irritants'의 뜻으로 가장 적절한 것은?",
+        "choices": [
+          "자극물",
+          "영양소",
+          "보호막",
+          "감정",
+          "장식"
+        ],
+        "correct_answer": 1,
+        "explanation": "'irritants'는 '자극물(눈을 자극하는 물질)'을 뜻합니다."
+      },
+      {
+        "passage": "We can discard or replace a scientific theory only if we have a better way of explaining the evidence that supports it.",
+        "question": "'discard'의 의미로 가장 적절한 것은?",
+        "choices": [
+          "보존하다",
+          "버리다/폐기하다",
+          "검증하다",
+          "확장하다",
+          "요약하다"
+        ],
+        "correct_answer": 2,
+        "explanation": "'discard'는 '버리다, 폐기하다'의 뜻입니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day, taking a moment to refresh your mind and recharge your energy. This power of a midday break is often underestimated.",
+        "question": "'underestimated'의 가장 가까운 의미는?",
+        "choices": [
+          "과대평가된",
+          "과소평가된",
+          "확장된",
+          "무시된",
+          "과시된"
+        ],
+        "correct_answer": 2,
+        "explanation": "'underestimated'는 '과소평가된'이라는 뜻입니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities...",
+        "question": "'underlies'의 뜻으로 가장 적절한 것은?",
+        "choices": [
+          "위에 있다",
+          "아래에 있다/기초가 되다",
+          "무시하다",
+          "덮다",
+          "장식하다"
+        ],
+        "correct_answer": 2,
+        "explanation": "'underlie'는 '기초가 되다' 혹은 '밑바탕이 되다'의 의미입니다."
+      }
+    ]
+  },
+  "main_idea": {
+    "examples": [
+      {
+        "passage": "When you are working in healthcare, it is important to develop a solid professional relationship with your patients. By establishing realistic self-boundaries, you can protect that relationship. It is important to keep the focus on the patient. When working with patients who are seen frequently, it is easy to start to think of them as friends. With a friend, you are likely to share personal information that is not appropriate with a patient. Patients may feel that they cannot share important health-related information because you are their friend, and it would be embarrassing to share that information. Self-boundaries can also be thought of as professional boundaries. You need to treat patients with respect and keep the relationship professional. Be friendly to patients and always keep the focus on the patient.",
+        "question": "이 글의 중심 내용으로 가장 적절한 것은?",
+        "choices": [
+          "환자와 친구가 되는 것이 바람직하다.",
+          "의료 관계에서 전문적인 자기 경계의 중요성",
+          "환자와는 개인적 정보 공유가 권장된다.",
+          "간호사에게는 사생활이 없다.",
+          "모든 환자에게 동등한 약을 처방해야 한다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 의료 현장에서 전문적 관계와 자기(직업적) 경계를 유지하는 것이 왜 중요한지 설명합니다."
+      },
+      {
+        "passage": "Experiments testify to science’s embrace of ignorance. Arguably the worst thing a scientist can do is to suppose they know what will happen in a given scenario without bothering to check. The rise of the experimental philosophy coincided with the liberation of curiosity as a valuable rather than a questionable attribute. For all that experimental science today is often assumed to be supported by a philosophical framework and an approved methodology (“state your hypothesis and then test it”), the fact is that, as philosopher of science Ian Hacking says, 'One can conduct an experiment simply out of curiosity to see what will happen.' Indeed, in the view of Charles Darwin’s son, the astronomer George Darwin, once in a while one should do a completely crazy experiment, even if it is most likely to prove fruitless. You never know until you try.",
+        "question": "이 글의 중심 내용으로 가장 적절한 것은?",
+        "choices": [
+          "실험은 항상 가설 검증만을 위해 수행되어야 한다.",
+          "호기심과 실험의 관계 및 실험의 중요성",
+          "과학자는 모든 결과를 예측해야 한다.",
+          "실험은 철학과 무관하다.",
+          "무모한 실험은 절대 시도해서는 안된다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 실험과 호기심의 가치를 강조하며, 실험을 통한 무지의 수용을 설명합니다."
+      },
+      {
+        "passage": "We can discard or replace a scientific theory only if we have a better way of explaining the evidence that supports it. The theories of Newton and Einstein offer great examples...",
+        "question": "이 글의 중심 내용으로 가장 적절한 것은?",
+        "choices": [
+          "모든 과학 이론은 즉시 폐기되어야 한다.",
+          "새 이론은 기존 이론의 성공들까지 설명해야 한다.",
+          "뉴턴의 이론은 아무 쓸모가 없다.",
+          "아인슈타인만이 현실을 제대로 설명했다.",
+          "관측은 이론과 무관하다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 새로운 이론이 채택되려면 기존 이론(예: 아인슈타인의 경우 뉴턴)의 성공까지 설명할 수 있어야 한다고 말합니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day... Start with using your non-dominant hand for routine tasks like writing or eating. This simple switch challenges your brain, activating pathways that aren’t typically engaged and promoting greater flexibility in thinking.",
+        "question": "이 글의 중심 내용으로 가장 적절한 것은?",
+        "choices": [
+          "점심 시간엔 절대 일을 해서는 안 된다.",
+          "짧은 뉴로빅 운동과 중간 휴식이 인지 능력에 도움을 준다.",
+          "두뇌 자극 활동은 해롭다.",
+          "오후에는 아무것도 하지 말아야 한다.",
+          "비싼 장비 없이는 효과를 볼 수 없다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 중간 휴식과 간단한 뉴로빅 활동이 인지적 피로를 줄이고 생산성을 높인다고 설명합니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities... Today, nobody is an expert in the whole of anything.",
+        "question": "이 글의 중심 내용으로 가장 적절한 것은?",
+        "choices": [
+          "와인 감별은 의학적 지식과 무관하다.",
+          "전문화로 인해 통합적 이해가 어려워졌다.",
+          "모든 연구자는 전체를 이해해야 한다.",
+          "미시적 연구는 불필요하다.",
+          "지식은 점점 줄어들고 있다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 전문화(세분화)로 인해 전체적 통합을 방해하고 있음을 논합니다."
+      }
+    ]
+  },
+  "implied_meaning": {
+    "examples": [
+      {
+        "passage": "Experiments testify to science’s embrace of ignorance. Arguably the worst thing a scientist can do is to suppose they know what will happen in a given scenario without bothering to check. The rise of the experimental philosophy coincided with the liberation of curiosity as a valuable rather than a questionable attribute. For all that experimental science today is often assumed to be supported by a philosophical framework and an approved methodology (“state your hypothesis and then test it”), the fact is that, as philosopher of science Ian Hacking says, 'One can conduct an experiment simply out of curiosity to see what will happen.' Indeed, in the view of Charles Darwin’s son, the astronomer George Darwin, once in a while one should do a completely crazy experiment, even if it is most likely to prove fruitless. You never know until you try.",
+        "question": "이 글에서 암시하는 바로 가장 적절한 것은?",
+        "choices": [
+          "과학에서는 항상 큰 성공만을 목표로 해야 한다.",
+          "호기심에서 시작한 실험도 가치를 지닐 수 있다.",
+          "실험은 오직 가설을 검증하기 위한 도구일 뿐이다.",
+          "실험은 전부 무의미하다.",
+          "과학자는 어떤 경우에도 무모한 실험을 해서는 안 된다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 호기심으로 시작하는 실험의 가치를 강조하며, 때로는 '무모한' 실험도 시도해 볼 가치가 있음을 암시합니다."
+      },
+      {
+        "passage": "Recent studies suggest links between taster status and behavioral disorders. For example, 'non-tasters' tend to have a higher incidence of alcoholism, perhaps because liquor seems less bitter to them. Conversely, 'supertasters' may avoid nutritious but mildly bitter foods such as broccoli, thus depriving themselves of a balanced diet. So, although taste is not nearly as glamorous as vision, hearing, or even touch, it makes sense for you to pay closer attention to it because chemistry, at least in your mouth, could be destiny.",
+        "question": "이 지문이 암시하는 내용으로 가장 적절한 것은?",
+        "choices": [
+          "미각과 행동 또는 식습관 간에 연관성이 있을 수 있다.",
+          "모든 사람은 같은 맛을 느낀다.",
+          "맛은 유전과 무관하다.",
+          "미각은 시각보다 중요하지 않다.",
+          "브로콜리는 반드시 피해야 한다."
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 미각 유형(taster status)이 행동장애나 식습관과 연관될 수 있음을 시사합니다."
+      },
+      {
+        "passage": "Historically, palaces weren’t just homes; they were carefully constructed stages designed to impress and intimidate. While stone symbolized permanence and strength, glass offered something equally powerful: visibility. The introduction of large windows in palaces allowed rulers to literally look down upon their subjects, emphasizing their elevated position. Conversely, it also allowed subjects to gaze up at their leaders, creating a sense of awe and distance. Consider the Palace of Versailles: its Hall of Mirrors, lined with reflective surfaces, not only magnified the grandeur of the space but also placed the king at the center of a dazzling display, reinforcing his absolute authority. The use of glass in palaces wasn’t merely aesthetic; it was strategic. Open sightlines allowed for better surveillance and control, ensuring the safety and security of the ruling family. Courtiers and visitors were constantly aware of being observed, contributing to an atmosphere of careful obedience and respect. The very architecture dictated social behavior, with glass acting as a silent enforcer of the power dynamic.",
+        "question": "이 글이 암시하는 바로 가장 적절한 것은?",
+        "choices": [
+          "건축은 권력과 사회적 통제를 전달하는 도구가 될 수 있다.",
+          "유리는 항상 편안함을 제공한다.",
+          "궁전은 기능성만을 위해 지어졌다.",
+          "건축은 개인의 감정과 무관하다.",
+          "유리는 권력과 관련이 없다."
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 건축 요소(유리 등)가 권력의 시각적 표현과 사회적 통제에 사용되었음을 암시합니다."
+      },
+      {
+        "passage": "We can discard or replace a scientific theory only if we have a better way of explaining the evidence that supports it. The theories of Newton and Einstein offer great examples. A vast body of evidence supports Newton’s theory of gravity, but by the late nineteenth century scientists had begun to discover cases where its predictions did not perfectly match observations. These discrepancies were explained only when Einstein developed his general theory of relativity, which was able to match the observations. Still, the many successes of Newton’s theory could not be ignored, and Einstein’s theory would not have gained acceptance if it had not been able to explain these successes equally well. It did, and that is why we now view Einstein’s theory as a broader theory of gravity than Newton’s theory. Some scientists today are seeking a theory of gravity that will go beyond Einstein’s. If any new theory ever gains acceptance, it will have to match all the successes of Einstein’s theory as well as work in new realms where Einstein’s theory does not.",
+        "question": "이 글이 암시하는 바로 가장 적절한 것은?",
+        "choices": [
+          "새 이론은 이전 이론을 완전히 무시해도 된다.",
+          "새 이론은 이전 이론의 강점까지 설명해야 한다.",
+          "과학은 변하지 않는다.",
+          "관찰보다 이론이 우선이다.",
+          "뉴턴 이론은 즉시 폐기되었다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 새로운 이론이 채택되려면 이전 이론의 성공까지 설명할 수 있어야 한다고 말합니다."
+      }
+    ]
+  },
+  "irrelevant_sentence": {
+    "examples": [
+      {
+        "passage": "Crying is a human characteristic that other animals do not have. Though some species shed tears as a result of pain or irritation, humans are currently known as the only creatures whose tears can be triggered by their feelings. Charles Darwin once declared emotional tears 'purposeless.' Contrary to Darwin’s declaration, however, scientists have recently found that crying plays a far more important role than was once believed. Some scientists have conducted several studies on why human beings weep.",
+        "question": "다음 중 글의 내용과 일치하지 않는 문장은?",
+        "choices": [
+          "울음은 다른 동물들이 갖고 있지 않는 인간만의 특징이다.",
+          "인간은 고통을 느낀 결과로 눈물을 흘리는 유일한 생명체이다.",
+          "찰스 다윈은 '감정적인 눈물은 쓸데없다'라고 선언했다.",
+          "최근 과학자들은 울음이 더 중요한 역할을 한다고 발견했다.",
+          "몇몇 과학자들은 인간이 왜 우는지 연구해 왔다."
+        ],
+        "correct_answer": 2,
+        "explanation": "②는 '인간이 유일하다'는 의미로 잘못 해석되어 사실과 다릅니다. 원문은 '감정에 의한 눈물'을 인간 특유로 설명합니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day, taking a moment to refresh your mind and recharge your energy. This power of a midday break is often underestimated. When you break away from routine, especially with activities designed to stimulate your brain, you prevent cognitive tiredness and enhance productivity for the rest of the day. Neurobic exercises simple yet effective are perfect for such breaks. They target different areas of your brain, keeping it agile and alert. These exercises create a mental oasis that refreshes and prepares you for the afternoon’s challenges.",
+        "question": "다음 중 글의 내용과 일치하지 않는 문장은?",
+        "choices": [
+          "한낮의 짧은 휴식은 생산성을 높일 수 있다.",
+          "뉴로빅 운동은 뇌의 다양한 영역을 자극한다.",
+          "비우호적인 활동은 집중을 해친다.",
+          "비우호적인 활동을 피해야 한다.",
+          "비우호적인 활동은 문맥상 언급되지 않았다."
+        ],
+        "correct_answer": 4,
+        "explanation": "④는 원문 내용과 무관하거나 반대되는 표현(avoid unfriendly activities)로, 지문은 오히려 비일상적 활동을 권장합니다."
+      },
+      {
+        "passage": "Recent studies suggest links between taster status and behavioral disorders. For example, 'non-tasters' tend to have a higher incidence of alcoholism, perhaps because liquor seems less bitter to them. Conversely, 'supertasters' may avoid nutritious but mildly bitter foods such as broccoli, thus depriving themselves of a balanced diet. So, although taste is not nearly as glamorous as vision, hearing, or even touch, it makes sense for you to pay closer attention to it because chemistry, at least in your mouth, could be destiny.",
+        "question": "다음 중 지문의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "미각 유형은 행동에 영향을 줄 수 있다.",
+          "젖은 면봉과 당, 레몬 등으로 혀의 맛을 테스트하는 방법을 제시하고 있다.",
+          "초미각자는 영양가 있는 약간 쓴 음식을 피할 수 있다.",
+          "초미각자는 브로콜리를 즐겨 먹는다.",
+          "미각 패턴은 단순한 맛 선호를 넘어 많은 것을 드러낼 수 있다."
+        ],
+        "correct_answer": 4,
+        "explanation": "④은 지문과 반대되는 내용입니다; 지문은 초미각자가 쓴 맛을 싫어해 브로콜리 등을 피할 수 있다고 말합니다."
+      },
+      {
+        "passage": "When you are working in healthcare, it is important to develop a solid professional relationship with your patients. By establishing realistic self-boundaries, you can protect that relationship. It is important to keep the focus on the patient. When working with patients who are seen frequently, it is easy to start to think of them as friends. With a friend, you are likely to share personal information that is not appropriate with a patient. Patients may feel that they cannot share important health-related information because you are their friend, and it would be embarrassing to share that information. Self-boundaries can also be thought of as professional boundaries. You need to treat patients with respect and keep the relationship professional. Be friendly to patients and always keep the focus on the patient.",
+        "question": "다음 중 글의 흐름과 무관한 문장은?",
+        "choices": [
+          "의료 종사자는 환자와 전문적 관계를 유지해야 한다.",
+          "현실적인 자기 경계를 설정하면 관계를 보호할 수 있다.",
+          "환자와 친구처럼 사적인 정보를 공유해도 된다.",
+          "자기 경계는 직업적 경계로 볼 수 있다.",
+          "환자 중심의 태도가 강조된다."
+        ],
+        "correct_answer": 3,
+        "explanation": "지문은 환자와 사적 정보 공유가 부적절하다고 명시하므로 ③이 무관합니다."
+      },
+      {
+        "passage": "Historically, palaces weren’t just homes; they were carefully constructed stages designed to impress and intimidate. While stone symbolized permanence and strength, glass offered something equally powerful: visibility. The introduction of large windows in palaces allowed rulers to literally look down upon their subjects, emphasizing their elevated position. Conversely, it also allowed subjects to gaze up at their leaders, creating a sense of awe and distance. Consider the Palace of Versailles: its Hall of Mirrors, lined with reflective surfaces, not only magnified the grandeur of the space but also placed the king at the center of a dazzling display, reinforcing his absolute authority. The use of glass in palaces wasn’t merely aesthetic; it was strategic. Open sightlines allowed for better surveillance and control, ensuring the safety and security of the ruling family. Courtiers and visitors were constantly aware of being observed, contributing to an atmosphere of careful obedience and respect. The very architecture dictated social behavior, with glass acting as a silent enforcer of the power dynamic.",
+        "question": "다음 중 글의 흐름과 무관한 문장은?",
+        "choices": [
+          "유리는 시각성을 제공하여 권력을 강조했다.",
+          "대형 창문은 통치자의 위치를 더 도드라지게 했다.",
+          "거울의 방은 왕을 장식의 중심에 두었다.",
+          "유리는 공공의 안전과 감시를 돕는 전략적 요소였다.",
+          "유리는 주로 왕실의 난방비를 절감하기 위한 것이었다."
+        ],
+        "correct_answer": 5,
+        "explanation": "지문은 유리의 상징적·전략적 역할을 설명하지만 난방비 절감은 언급되지 않으므로 ⑤가 무관합니다."
+      }
+    ]
+  },
+  "paragraph_summary": {
+    "examples": [
+      {
+        "passage": "Statistics in the twentieth century became the systematic collection of quantitative information needed by the state. This process occurred in all the industrialised countries as a key part of their becoming modern states. Desrosières writes: \"It is difficult to think simultaneously that the objects being measured really do exist and that this is only a convention\". Yet this is the case. Phenomena such as prices being charged and products being sold exist, but the categories and classification frameworks supporting the collection, aggregation, and organisation of official statistics are devised to serve the purposes of the state, for macroeconomic or for social policies. Theodore Porter described the use of statistics to create state authority: \"Quantification is a way of making decisions without seeming to decide\", characterising it as a \"social technology\" intended to build trust in authority.",
+        "question": "이 글의 요약으로 가장 적절한 것은?",
+        "choices": [
+          "통계는 객관적 사실만을 반영한다.",
+          "20세기 통계는 국가가 필요로 하는 정량 정보를 체계적으로 수집하는 수단이 되었다.",
+          "통계는 개인 정보를 보호하기 위한 기술이다.",
+          "통계는 과학과 무관하다.",
+          "통계는 주로 과학적 실험을 위해 사용된다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 20세기 통계의 국가적 역할과 통계가 권위 구축에 사용되는 방식을 설명합니다."
+      },
+      {
+        "passage": "We can discard or replace a scientific theory only if we have a better way of explaining the evidence that supports it. The theories of Newton and Einstein offer great examples...",
+        "question": "이 문단의 요약으로 가장 적절한 것은?",
+        "choices": [
+          "새 이론은 관찰을 무시해도 된다.",
+          "새 이론은 이전 이론의 성과까지 설명해야 한다.",
+          "과학 이론은 한 번 확립되면 바뀌지 않는다.",
+          "뉴턴은 틀렸고 아인슈타인만 옳다.",
+          "모든 이론은 동일하게 중요하다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문 요지는 '이전 이론의 성공까지 설명하는 더 나은 설명이 있을 때만 이론을 교체할 수 있다'입니다."
+      },
+      {
+        "passage": "Imagine pausing in the middle of a busy day, taking a moment to refresh your mind and recharge your energy. This power of a midday break is often underestimated. When you break away from routine, especially with activities designed to stimulate your brain, you prevent cognitive tiredness and enhance productivity for the rest of the day. Neurobic exercises — simple yet effective — are perfect for such breaks. They target different areas of your brain, keeping it agile and alert. These exercises create a mental oasis that refreshes and prepares you for the afternoon’s challenges.",
+        "question": "이 문단의 요약으로 가장 적절한 것은?",
+        "choices": [
+          "점심시간엔 반드시 운동을 해야 한다.",
+          "짧은 두뇌 자극 활동은 인지 유연성과 생산성을 높일 수 있다.",
+          "비지니스 일정은 휴식이 필요 없다.",
+          "뉴로빅 운동은 장비가 필요하다.",
+          "비우호적인 환경에서는 휴식이 불가능하다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 간단한 두뇌 자극 활동(뉴로빅)이 인지 기능에 긍정적 영향을 준다고 요약할 수 있습니다."
+      },
+      {
+        "passage": "Just as an expert in the taste and colour of wine will gain much by being aware of the chemistry that underlies those qualities, so each perspective on the body can potentially enhance the others. And yet every scientific tool, from microscopes to mathematics, and every aspect of the body, from the brain to the microorganism, requires such depth of expertise that this tends not to happen: we tend to study the human body in silos, each community sectioned from the others by its own specialised vocabulary. Research communities may be dedicated to one type of scientific tool or a specific component of the body, such as one type of cell...",
+        "question": "이 문단의 요약으로 가장 적절한 것은?",
+        "choices": [
+          "전문화로 인해 전체적 이해가 어렵지만 다양한 관점의 통합이 유익하다.",
+          "와인과 신체는 아무 관련이 없다.",
+          "모든 연구자는 전체를 이해할 수 있다.",
+          "현대 과학은 너무 단순하다.",
+          "미시적 연구는 중요하지 않다."
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 다양한 관점 통합의 이점과 전문화로 인한 장애를 함께 제시합니다."
+      },
+      {
+        "passage": "When a cell divides, the genomes of its two daughters are often not quite identical to each other or to that of the parent cell. On rare occasions, the error may represent a change for the better; more probably, it will cause no significant difference in the cell’s prospects. But in some cases, the error will cause serious damage; for example, by disrupting the coding sequence for a key protein. Changes due to mistakes of the first type will tend to be perpetuated, because the altered cell has an increased likelihood of reproducing itself. Changes due to mistakes of the second type — neutral changes — may be perpetuated or not: it is a matter of chance whether the altered cell or its cousins will succeed. But changes that cause serious damage lead nowhere: the cell that suffers them dies, leaving no progeny. Through endless repetition of this cycle of mutation and natural selection organisms evolve: their genetic specifications change, sometimes giving organisms new ways to exploit the environment more effectively, to survive in competition with others, and to reproduce successfully.",
+        "question": "이 문단의 요약으로 가장 적절한 것은?",
+        "choices": [
+          "세포 분열은 항상 동일한 유전체를 만든다.",
+          "돌연변이와 자연선택의 반복을 통해 유기체는 진화한다.",
+          "돌연변이는 항상 파괴적이다.",
+          "유전적 변화는 개체에 아무 영향이 없다.",
+          "진화는 단번에 일어난다."
+        ],
+        "correct_answer": 2,
+        "explanation": "지문은 돌연변이와 선택의 반복으로 진화가 일어난다는 점을 설명합니다."
+      }
+    ]
+  },
+  "reading_comprehension": {
+    "examples": [
+      {
+        "passage": "To the Customer Service Team,\n\nAbout a month ago, my wife and I purchased a set of bookshelves from your store. I was truly excited to find furniture that perfectly matched our new home. When we bought the bookshelves, the manager said it would take four weeks for delivery, which was last weekend. We had set our plans to ensure someone would be available to receive the delivery; however, no one came with the bookshelves that day. This delay has caused us considerable inconvenience. Therefore, please provide a clear and specific delivery date. We expect this issue to be addressed promptly, so that we can reorganize our schedule to receive the delivery without any confusion.",
+        "question": "다음 글의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "정확한 책상 배송 날짜를 알려줄 것을 요청하기 위해 쓴 글이다.",
+          "글쓴이는 아내와 새집에 어울리는 가구를 찾게 되어 들떠 있었다.",
+          "매니저는 배송에 주가 걸릴 것이라고 말했고 그것은 곧 다가올 것이다.",
+          "글쓴이 부부 누군가 배송을 받을 수 있도록 계획을 세웠었다.",
+          "어떠한 혼란없이 일정을 재조정할 수 있도록 문제가 신속히 처리되기를 기대한다."
+        ],
+        "correct_answer": 3,
+        "explanation": "③은 원문 '매니저는 4주가 걸릴 것이라 말했다'인데, 보기 문장은 왜곡되어 있어 불일치합니다."
+      },
+      {
+        "passage": "I was heading in the direction of a forest road that I knew would take me home. But almost as though someone had switched off all the lights I was suddenly in a black forest with no light of any kind. Feeling lost, I stumbled. I fell. I tore my clothes and injured myself falling down a hill. In desperation I stopped and leaned against a tree. I have no idea where I am now. Will anyone even notice that I’m gone? It was then that a faint aroma drifted through the darkness: the scent of cooking. I stumbled towards it, and soon, a faint, yellowish light glowed through the trees. It was Uncle Krull’s cabin and I could see him through the window! Thankful beyond words, I knew I could finally ask for help. My hardship was over.",
+        "question": "다음 글의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "글쓴이는 집으로 데려다 줄 것이라고 알고 있던 숲길 방향으로 향하고 있었다.",
+          "숲속은 모든 불을 꺼 버린 것처럼 어떤 종류의 빛도 없는 암흑의 숲이었다.",
+          "글쓴이는 언덕에서 굴러 떨어져 옷이 찢어지고 다쳤으며 자포자기한 채 멈춰섰다.",
+          "어둠을 통해 희미한 불빛이 비쳐오기 시작했고 글쓴이는 그것을 향해 걸어갔다.",
+          "글쓴이의 심경은 절망에서 안도감으로 바뀌었다."
+        ],
+        "correct_answer": 2,
+        "explanation": "원문은 'almost as though someone had switched off all the lights'라는 비유적 표현을 쓰지만 보기 ②는 과도할 수 있으나 대체로 문맥과 일치합니다; PDF의 '내용 일치' 유형을 반영합니다."
+      },
+      {
+        "passage": "Experiments testify to science’s embrace of ignorance. Arguably the worst thing a scientist can do is to suppose they know what will happen in a given scenario without bothering to check. The rise of the experimental philosophy coincided with the liberation of curiosity as a valuable rather than a questionable attribute. For all that experimental science today is often assumed to be supported by a philosophical framework and an approved methodology (“state your hypothesis and then test it”), the fact is that, as philosopher of science Ian Hacking says, 'One can conduct an experiment simply out of curiosity to see what will happen.' Indeed, in the view of Charles Darwin’s son, the astronomer George Darwin, once in a while one should do a completely crazy experiment, even if it is most likely to prove fruitless. You never know until you try.",
+        "question": "다음 글의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "과학에서 실험은 가설이 증명될 때에 진정한 가치를 갖게 됨을 이야기하고 있다.",
+          "과학자가 할 수 있는 최악의 것은 그들이 확인하려는 수고를 들이지 않고 주어진 시나리오에서 일어날 일을 안다고 가정하는 것이다.",
+          "실험 철학의 등장은 의심스러운 특성이 아닌 가치 있는 특성으로서의 호기심의 해방과 동시에 일어났다.",
+          "Ian Hacking은 누군가는 호기심으로 실험을 수행할 수 있다고 말했다.",
+          "George Darwin은 무모한 실험도 때때로 시도해야 한다고 보았다."
+        ],
+        "correct_answer": 1,
+        "explanation": "지문은 실험과 호기심의 가치를 말하지만 '가설 증명 시에만 진정한 가치가 있다'고 말하지 않으므로 ①은 일치하지 않습니다."
+      },
+      {
+        "passage": "Recent studies suggest links between taster status and behavioral disorders. For example, 'non-tasters' tend to have a higher incidence of alcoholism, perhaps because liquor seems less bitter to them. Conversely, 'supertasters' may avoid nutritious but mildly bitter foods such as broccoli, thus depriving themselves of a balanced diet. So, although taste is not nearly as glamorous as vision, hearing, or even touch, it makes sense for you to pay closer attention to it because chemistry, at least in your mouth, could be destiny.",
+        "question": "다음 글의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "미각의 민감도는 식습관과 행동에 영향을 미칠 수 있다.",
+          "지문은 젖은 면봉과 당, 레몬 등으로 혀의 맛을 테스트하는 방법을 제시하고 있다.",
+          "초미각자는 영양가 있는 약간 쓴 음식을 피할 수 있다.",
+          "미각은 시각, 청각, 촉각만큼 화려하기 때문에 우선시 되어야 한다.",
+          "미각 패턴은 단순한 맛 선호를 넘어 많은 것을 드러낼 수 있다."
+        ],
+        "correct_answer": 4,
+        "explanation": "④ 문장은 원문과 다르게 '미각이 시각 등만큼 화려해서 우선시 되어야 한다'고 과장한 표현으로, 원문은 '그만큼 화려하지는 않지만 주의를 기울일 가치가 있다'고 말합니다."
+      },
+      {
+        "passage": "When you are working in healthcare, it is important to develop a solid professional relationship with your patients. By establishing realistic self-boundaries, you can protect that relationship. It is important to keep the focus on the patient. When working with patients who are seen frequently, it is easy to start to think of them as friends. With a friend, you are likely to share personal information that is not appropriate with a patient. Patients may feel that they cannot share important health-related information because you are their friend, and it would be embarrassing to share that information. Self-boundaries can also be thought of as professional boundaries. You need to treat patients with respect and keep the relationship professional. Be friendly to patients and always keep the focus on the patient.",
+        "question": "다음 글의 내용과 일치하지 않는 것은?",
+        "choices": [
+          "의료 종사자는 환자를 존중하며 직업적인 경계를 유지해야 함을 이야기하고 있다.",
+          "현실적인 자기 경계를 설정함으로써 여러분은 그 관계를 보호할 수 있다.",
+          "환자와는 공유하기 적절하지 않은 개인 정보를 친구와 공유할 가능성이 있다.",
+          "환자들은 의료 종사자가 자신들의 친구이기 때문에 중요 정보를 자신들이 공유할 수 있다.",
+          "자기 경계는 직업적인 경계로 여겨질 수 있다."
+        ],
+        "correct_answer": 4,
+        "explanation": "④는 원문과 반대되는 내용입니다. 원문은 환자가 친분 때문에 중요한 정보를 공유하지 못할 수도 있다고 말합니다."
+      }
+    ]
+  }
+}

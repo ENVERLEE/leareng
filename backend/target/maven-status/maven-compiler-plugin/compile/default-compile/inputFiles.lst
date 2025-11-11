@@ -35,3 +35,4 @@
 /Users/enverlee/gonzalolearing/backend/src/main/java/com/leareng/repository/SubscriptionRepository.java
 /Users/enverlee/gonzalolearing/backend/src/main/java/com/leareng/controller/QuestionController.java
 /Users/enverlee/gonzalolearing/backend/src/main/java/com/leareng/service/PassageService.java
+/Users/enverlee/gonzalolearing/backend/src/main/java/com/leareng/dto/FewShotExample.java

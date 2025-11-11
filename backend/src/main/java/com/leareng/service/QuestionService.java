@@ -41,7 +41,9 @@ public class QuestionService {
             question.setType(qo.getType());
             question.setTypeId(qo.getTypeId());
             question.setQuestionNumber(qo.getQuestionNumber());
-            question.setOriginalText(originalText);
+            // 표시가 포함된 지문이 있으면 사용, 없으면 원본 지문 사용
+            question.setOriginalText(qo.getOriginalText() != null && !qo.getOriginalText().isEmpty() 
+                ? qo.getOriginalText() : originalText);
             question.setKoreanTranslation(koreanTranslation);
             
             questionRepository.save(question);
