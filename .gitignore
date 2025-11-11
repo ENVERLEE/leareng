@@ -28,12 +28,18 @@ backend/.mvn/wrapper/maven-wrapper.jar
 
 # Compiled class files
 *.class
+**/*.class
 *.jar
 *.war
 *.ear
 *.nar
 hs_err_pid*
 replay_pid*
+
+# Java compiled files in any directory
+**/classes/
+**/bin/
+**/build/classes/
 
 # ============================================
 # IDE - IntelliJ IDEA
