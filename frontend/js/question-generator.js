@@ -424,6 +424,30 @@ function hideSubscriptionModal() {
     }
 }
 
+// 무료 체험 신청 핸들러
+if (document.getElementById('trialBtn')) {
+    document.getElementById('trialBtn').addEventListener('click', async () => {
+        if (!confirm('BASIC 티어 3일 무료 체험을 시작하시겠습니까?')) {
+            return;
+        }
+
+        try {
+            showLoading('무료 체험을 시작하고 있습니다...');
+            const response = await api.post('/subscription/upgrade', {
+                tier: 'BASIC'
+            });
+            hideLoading();
+            alert('3일 무료 체험이 시작되었습니다! 체험 종료 후 계속 사용하려면 구독 신청이 필요합니다.');
+            if (typeof loadSubscriptionStatus === 'function') {
+                loadSubscriptionStatus();
+            }
+        } catch (error) {
+            hideLoading();
+            alert('오류: ' + (error.message || '무료 체험 신청 중 오류가 발생했습니다.'));
+        }
+    });
+}
+
 // Subscription request handler
 if (document.getElementById('subscribeBtn')) {
     document.getElementById('subscribeBtn').addEventListener('click', () => {

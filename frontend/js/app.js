@@ -100,6 +100,7 @@ async function loadSubscriptionStatus() {
         const badgeEl = document.getElementById('subscriptionBadge');
         const badgeTextEl = document.getElementById('subscriptionBadgeText');
         const titleEl = document.getElementById('subscriptionTitle');
+        const trialBtn = document.getElementById('trialBtn');
         const subscribeBtn = document.getElementById('subscribeBtn');
         
         const tier = status.tier || 'FREE';
@@ -138,7 +139,16 @@ async function loadSubscriptionStatus() {
             titleEl.textContent = `${tierName} ${tier === 'FREE' ? '버전' : '티어'}`;
         }
         
-        // 구독 버튼 표시/숨김 (FREE 티어일 때만 표시)
+        // 무료 체험 버튼 표시/숨김 (FREE 티어일 때만 표시)
+        if (trialBtn) {
+            if (tier === 'FREE' && !status.isSubscribed) {
+                trialBtn.style.display = 'flex';
+            } else {
+                trialBtn.style.display = 'none';
+            }
+        }
+        
+        // 구독 버튼 표시/숨김 (FREE 티어일 때만 표시, 무료 체험 버튼과 함께)
         if (subscribeBtn) {
             if (tier === 'FREE' && !status.isSubscribed) {
                 subscribeBtn.style.display = 'flex';
